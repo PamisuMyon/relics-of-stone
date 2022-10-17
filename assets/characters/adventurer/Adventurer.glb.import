@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://8oxbhggguwt0"
+uid="uid://byln4fr7p6cn6"
 path="res://.godot/imported/Adventurer.glb-cae93f18517cc0e0d6683cf9f28e4b5b.scn"
 
 [deps]
@@ -5424,6 +5424,44 @@ _subresources={
 "slice_99/save_to_file/path": "",
 "slice_99/start_frame": 0,
 "slices/amount": null
+}
+},
+"materials": {
+"Brown": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/adventurer/Brown.tres"
+},
+"Brown2": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/adventurer/Brown2.tres"
+},
+"Brown_02": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/adventurer/Brown_02.tres"
+},
+"Gold": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/adventurer/Gold.tres"
+},
+"Green": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/adventurer/Green.tres"
+},
+"Hair_Brown": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/adventurer/Hair_Brown.tres"
+},
+"LightGreen": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/adventurer/LightGreen.tres"
+},
+"Skin": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/adventurer/Skin.tres"
+},
+"White": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/adventurer/White.tres"
 }
 }
 }

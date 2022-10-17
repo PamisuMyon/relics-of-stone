@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c8vclipx74s4c"]
+
+[resource]
+resource_name = "Purple"
+cull_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.257269, 0.0973622, 0.406656, 1)
+roughness = 0.690035

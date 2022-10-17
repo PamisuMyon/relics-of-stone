@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://m83q0r4st7t8"
+uid="uid://boq88gx0ho2ly"
 path="res://.godot/imported/Witch.glb-5ec1fb68b062ffc3f4a79d9d1530dddc.scn"
 
 [deps]
@@ -5424,6 +5424,32 @@ _subresources={
 "slice_99/save_to_file/path": "",
 "slice_99/start_frame": 0,
 "slices/amount": null
+}
+},
+"materials": {
+"Brown": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/witch/Brown.tres"
+},
+"Brown2": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/witch/Brown2.tres"
+},
+"Gold": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/witch/Gold.tres"
+},
+"Hair_Black": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/witch/Hair_Black.tres"
+},
+"Purple": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/witch/Purple.tres"
+},
+"Skin": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/characters/witch/Skin.tres"
 }
 }
 }

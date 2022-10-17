@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1tc72d7erkyd"]
+
+[ext_resource type="Material" uid="uid://b1ava60wh4myo" path="res://assets/materials/mat_test.tres" id="1_prtyd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lih66"]
+material = ExtResource("1_prtyd")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nii3v"]
+
+[node name="Cube2" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.01359, 1, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_lih66")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_nii3v")

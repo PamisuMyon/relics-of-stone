@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cgof66b5gos1h"]
+
+[resource]
+resource_name = "Brown"
+cull_mode = 2
+diffuse_mode = 3
+specular_mode = 1
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.193322, 0.143563, 0.10799, 1)
+roughness = 0.690035
