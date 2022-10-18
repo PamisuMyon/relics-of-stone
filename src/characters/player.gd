@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 const SHAPE_CAST_OFFSET = .416
 
+@export var scroll_count = -1
+
 @export var speed := 5.0
 @export var jump_velocity := 4.5
 @export var rotation_weight := .5
@@ -90,7 +92,7 @@ func _show_dummy_floor(pos):
 func _generate_floor(pos: Vector3):
 	if is_generating_floor:
 		return
-	var floor: Floor = preload("res://src/environment/floor.tscn").instantiate()
-	get_parent().add_child(floor)
+	var floor_inst: Floor = preload("res://src/environment/floor.tscn").instantiate()
+	get_parent().add_child(floor_inst)
 	is_generating_floor = true
-	floor.animate_spawn(pos, func(): is_generating_floor = false)
+	floor_inst.animate_spawn(pos, func(): is_generating_floor = false)

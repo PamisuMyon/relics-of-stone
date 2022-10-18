@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7yinyokimmcv"]
+[gd_scene load_steps=11 format=3 uid="uid://b7yinyokimmcv"]
 
 [ext_resource type="PackedScene" uid="uid://xpqtxq64qavp" path="res://src/characters/player.tscn" id="2_pt22t"]
 [ext_resource type="PackedScene" uid="uid://mfwk4y6ysj76" path="res://src/environment/column.tscn" id="3_3hstp"]
 [ext_resource type="Script" path="res://src/framework/camera_controller_3d.gd" id="3_l6avm"]
 [ext_resource type="PackedScene" uid="uid://cqqakjex5toh0" path="res://src/environment/floor.tscn" id="4_cujhq"]
 [ext_resource type="PackedScene" uid="uid://dt4c8hqxpdjv8" path="res://src/characters/witch.tscn" id="5_fwtn8"]
+[ext_resource type="PackedScene" uid="uid://bsik5aj203u6r" path="res://src/props/crystal.tscn" id="6_xji28"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_81ddi"]
 
@@ -55,6 +56,9 @@ size = 10.0
 [node name="Floor" parent="Floors" instance=ExtResource("4_cujhq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
 
+[node name="Floor2" parent="Floors" instance=ExtResource("4_cujhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 7)
+
 [node name="Column" parent="." instance=ExtResource("3_3hstp")]
 collision_layer = 4
 collision_mask = 0
@@ -68,3 +72,6 @@ monitoring = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlaceableArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_k0x70")
+
+[node name="Crystal" parent="." instance=ExtResource("6_xji28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.330385, 7)

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsik5aj203u6r"]
+
+[ext_resource type="PackedScene" uid="uid://bq14180xnxp8r" path="res://src/props/item.tscn" id="1_nxfl7"]
+[ext_resource type="PackedScene" uid="uid://bi0ry4jd33dww" path="res://assets/props/Crystal5.glb" id="2_0mxxq"]
+
+[node name="Crystal" instance=ExtResource("1_nxfl7")]
+
+[node name="Crystal5" parent="." index="1" instance=ExtResource("2_0mxxq")]

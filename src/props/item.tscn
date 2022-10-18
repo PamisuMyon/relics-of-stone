@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq14180xnxp8r"]
+
+[ext_resource type="Script" path="res://src/props/item.gd" id="1_3whjk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qlvqh"]
+radius = 0.3
+
+[node name="Item" type="Area3D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_3whjk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_qlvqh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
