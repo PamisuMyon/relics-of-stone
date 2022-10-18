@@ -1,15 +1,6 @@
 extends StaticBody3D
 class_name Floor
 
-#@export var is_light := false
-
-#func _ready():
-#	if is_light:
-#		var mat_glow = preload("res://assets/ruins/mat_floor_glow.tres")
-#		var mesh_inst: MeshInstance3D = $RootNode/Floor_SquareLarge
-#		mesh_inst.mesh = mesh_inst.mesh.duplicate()
-#		mesh_inst.mesh.surface_set_material(0, mat_glow)
-
 @onready var shape_cast_left: ShapeCast3D = $ShapeCastLeft
 @onready var shape_cast_right: ShapeCast3D = $ShapeCastRight
 @onready var shape_cast_forward: ShapeCast3D = $ShapeCastForward
@@ -17,7 +8,8 @@ class_name Floor
 
 var tween: Tween
 
-func get_placeable_floor_position(player_pos: Vector3):
+
+func get_placeable_floor_position(player_pos: Vector3) -> Dictionary:
 	var direction = player_pos - global_position
 	var abs_x = abs(direction.x)
 	var abs_z = abs(direction.z)
@@ -38,12 +30,16 @@ func get_placeable_floor_position(player_pos: Vector3):
 		for i in shape.get_collision_count():
 			var col = shape.get_collider(i)
 			if col.collision_layer != 8:	# Layer 4: placeble
-				return Vector3.ZERO
+				# colliding but not placable area
+				return { "pos": Vector3.ZERO, "can_place": false }
 		var pos = shape.global_position
 		pos.y = global_position.y
-		return pos
+		return { "pos": pos, "can_place": true }
 	else:
-		return Vector3.ZERO
+		# empty area
+		var pos = shape.global_position
+		pos.y = global_position.y
+		return { "pos": pos, "can_place": false }
 
 
 func animate_spawn(pos: Vector3, callback: Callable):

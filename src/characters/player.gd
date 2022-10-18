@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 const SHAPE_CAST_OFFSET = .416
 
@@ -13,13 +14,13 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var move_basis := Basis(Vector3.UP, deg_to_rad(45))
 
 var dummy_floor_scene = preload("res://src/environment/floor_dummy.tscn")
-var dummy_floor: Node3D
+var dummy_floor: FloorDummy
 var is_generating_floor := false
 
 @onready var model = $Model
 @onready var ray_cast_ground: RayCast3D = $RayCastGround
 @onready var shape_cast_ledge: ShapeCast3D = $ShapeCastLedge
-
+@onready var level = get_parent() as LevelManager
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -57,10 +58,12 @@ func _smooth_look_at(dir: Vector3):
 
 func _process(delta):
 	_detect_floor()
-	if not is_generating_floor and dummy_floor and dummy_floor.visible:
+	if not is_generating_floor and dummy_floor and dummy_floor.visible and dummy_floor.is_available:
 		if Input.is_action_just_pressed("interact"):
-			dummy_floor.visible = false
-			_generate_floor(dummy_floor.global_position)
+			var succeed = level.scroll_change(-1)
+			if succeed:
+				dummy_floor.toggle_visibility(false)
+				_generate_floor(dummy_floor.global_position)
 
 
 func _detect_floor():
@@ -69,24 +72,26 @@ func _detect_floor():
 	var is_dummy_floor_showed = false
 	if ray_cast_ground.is_colliding():
 		var col = ray_cast_ground.get_collider()
-		if col.has_method("get_placeable_floor_position"):
-			var pos = col.get_placeable_floor_position(global_position)
-			_show_dummy_floor(pos)
+		if col is Floor:
+			var f = col as Floor
+			var result = f.get_placeable_floor_position(global_position)
+			_show_dummy_floor(result)
 			is_dummy_floor_showed = true
 			
 	if not is_dummy_floor_showed and dummy_floor:
-		dummy_floor.visible = false
+		dummy_floor.toggle_visibility(false)
 
 
-func _show_dummy_floor(pos):
+func _show_dummy_floor(dict: Dictionary):
 	if not dummy_floor:
-		dummy_floor = dummy_floor_scene.instantiate()
+		dummy_floor = dummy_floor_scene.instantiate() as FloorDummy
 		get_parent().add_child(dummy_floor)
-	dummy_floor.global_position = pos
-	if pos == Vector3.ZERO:
-		dummy_floor.visible = false
+	dummy_floor.global_position = dict.pos
+	if dict.pos == Vector3.ZERO:
+		dummy_floor.toggle_visibility(false)
 	else:
-		dummy_floor.visible = true
+		dummy_floor.toggle_visibility(true)
+		dummy_floor.toggle_availability(dict.can_place)
 
 
 func _generate_floor(pos: Vector3):

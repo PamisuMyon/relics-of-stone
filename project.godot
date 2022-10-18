@@ -13,9 +13,27 @@ _global_script_classes=[{
 "class": &"Floor",
 "language": &"GDScript",
 "path": "res://src/environment/floor.gd"
+}, {
+"base": "Node3D",
+"class": &"FloorDummy",
+"language": &"GDScript",
+"path": "res://src/environment/floor_dummy.gd"
+}, {
+"base": "Node",
+"class": &"LevelManager",
+"language": &"GDScript",
+"path": "res://src/framework/level_manager.gd"
+}, {
+"base": "CharacterBody3D",
+"class": &"Player",
+"language": &"GDScript",
+"path": "res://src/characters/player.gd"
 }]
 _global_script_class_icons={
-"Floor": ""
+"Floor": "",
+"FloorDummy": "",
+"LevelManager": "",
+"Player": ""
 }
 
 [application]

@@ -1,38 +1,31 @@
-[gd_scene load_steps=11 format=3 uid="uid://b7yinyokimmcv"]
+[gd_scene load_steps=12 format=3 uid="uid://b7yinyokimmcv"]
 
+[ext_resource type="Script" path="res://src/framework/level_manager.gd" id="1_8i1b0"]
 [ext_resource type="PackedScene" uid="uid://xpqtxq64qavp" path="res://src/characters/player.tscn" id="2_pt22t"]
+[ext_resource type="Environment" uid="uid://7llcpbx14r1" path="res://src/environment/environment.tres" id="3_1wf32"]
 [ext_resource type="PackedScene" uid="uid://mfwk4y6ysj76" path="res://src/environment/column.tscn" id="3_3hstp"]
 [ext_resource type="Script" path="res://src/framework/camera_controller_3d.gd" id="3_l6avm"]
 [ext_resource type="PackedScene" uid="uid://cqqakjex5toh0" path="res://src/environment/floor.tscn" id="4_cujhq"]
 [ext_resource type="PackedScene" uid="uid://dt4c8hqxpdjv8" path="res://src/characters/witch.tscn" id="5_fwtn8"]
 [ext_resource type="PackedScene" uid="uid://bsik5aj203u6r" path="res://src/props/crystal.tscn" id="6_xji28"]
-
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_81ddi"]
-
-[sub_resource type="Sky" id="Sky_brevj"]
-sky_material = SubResource("PhysicalSkyMaterial_81ddi")
-
-[sub_resource type="Environment" id="Environment_g0h01"]
-background_color = Color(0.568627, 0.678431, 0.843137, 1)
-sky = SubResource("Sky_brevj")
-ambient_light_source = 2
-ambient_light_color = Color(0.568627, 0.678431, 0.843137, 1)
-fog_enabled = true
-fog_light_color = Color(0.486275, 0.560784, 0.509804, 1)
-fog_height = -15.0
-fog_height_density = 0.1
+[ext_resource type="PackedScene" uid="uid://ckyeh1q7j8dwb" path="res://src/ui/hud.tscn" id="7_5kwy0"]
+[ext_resource type="PackedScene" uid="uid://b55l867boeih3" path="res://src/props/scroll.tscn" id="10_1b8se"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k0x70"]
 size = Vector3(22.9654, 1, 22.647)
 
 [node name="TestMap" type="Node3D"]
+script = ExtResource("1_8i1b0")
+initial_scroll_count = 1
+
+[node name="HUD" parent="." instance=ExtResource("7_5kwy0")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.997389, -0.0625369, 0.0361057, 0.0546818, -0.327517, 0.943262, -0.0471634, 0.942773, 0.330082, 0, 8.56998, 0)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_g0h01")
+environment = ExtResource("3_1wf32")
 
 [node name="Player" parent="." instance=ExtResource("2_pt22t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206609, 0.46886, 7.00403)
@@ -59,6 +52,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
 [node name="Floor2" parent="Floors" instance=ExtResource("4_cujhq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 7)
 
+[node name="Floor3" parent="Floors" instance=ExtResource("4_cujhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 7)
+
 [node name="Column" parent="." instance=ExtResource("3_3hstp")]
 collision_layer = 4
 collision_mask = 0
@@ -74,4 +70,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_k0x70")
 
 [node name="Crystal" parent="." instance=ExtResource("6_xji28")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.330385, 7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 7)
+
+[node name="Scroll" parent="." instance=ExtResource("10_1b8se")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 7)

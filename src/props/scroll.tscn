@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b55l867boeih3"]
+
+[ext_resource type="PackedScene" uid="uid://bq14180xnxp8r" path="res://src/props/item.tscn" id="1_fefoc"]
+[ext_resource type="PackedScene" uid="uid://cgr51l83qxt71" path="res://assets/props/Scroll.glb" id="2_rnem7"]
+
+[node name="Scroll" instance=ExtResource("1_fefoc")]
+type = 1
+
+[node name="Scroll" parent="." index="1" instance=ExtResource("2_rnem7")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)

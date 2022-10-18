@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://i5iga2iagx8e"]
+[gd_scene load_steps=4 format=3 uid="uid://i5iga2iagx8e"]
 
 [ext_resource type="Material" uid="uid://dc7g04v6qy338" path="res://assets/ruins/mat_floor_translucent.tres" id="1_k3wp7"]
+[ext_resource type="Script" path="res://src/environment/floor_dummy.gd" id="1_vta28"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_bw8ld"]
 resource_name = "Root Scene_Floor_SquareLarge"
@@ -19,6 +20,9 @@ blend_shape_mode = 0
 
 [node name="FloorDummy" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
+script = ExtResource("1_vta28")
+color_available = null
+color_unavailable = null
 
 [node name="RootNode" type="Node3D" parent="."]
 
