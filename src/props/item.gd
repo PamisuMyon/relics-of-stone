@@ -2,7 +2,7 @@ extends Area3D
 
 enum ItemType { KEY, SCROLL }
 
-@export var type: ItemType = ItemType.KEY
+@export var type := ItemType.KEY
 
 var is_valid = true
 
@@ -13,9 +13,6 @@ func _ready():
 
 
 func _process(delta):
-#	var trans = transform.rotated(transform., rotate_speed.x * delta)
-#	trans = trans.rotated(Vector3.UP, rotate_speed.y * delta)
-#	trans = trans.rotated(Vector3.FORWARD, rotate_speed.z * delta)
 	rotate_x(rotate_speed.x * delta)
 	rotate_y(rotate_speed.y * delta)
 	rotate_z(rotate_speed.z * delta)

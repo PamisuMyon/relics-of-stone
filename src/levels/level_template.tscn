@@ -1,0 +1,61 @@
+[gd_scene load_steps=10 format=3 uid="uid://bodrg5tuuwmcx"]
+
+[ext_resource type="Script" path="res://src/framework/level_manager.gd" id="1_0la1v"]
+[ext_resource type="Environment" uid="uid://7llcpbx14r1" path="res://src/environment/environment.tres" id="1_7r1an"]
+[ext_resource type="PackedScene" uid="uid://ckyeh1q7j8dwb" path="res://src/ui/hud.tscn" id="2_gpmtw"]
+[ext_resource type="PackedScene" uid="uid://xpqtxq64qavp" path="res://src/characters/player.tscn" id="3_eniu2"]
+[ext_resource type="PackedScene" uid="uid://dt4c8hqxpdjv8" path="res://src/characters/witch.tscn" id="4_wtugw"]
+[ext_resource type="Script" path="res://src/framework/camera_controller_3d.gd" id="5_adqgu"]
+[ext_resource type="PackedScene" uid="uid://mfwk4y6ysj76" path="res://src/environment/column.tscn" id="7_ehvhh"]
+[ext_resource type="PackedScene" uid="uid://ctwecx4ktusxe" path="res://src/props/summoning_circle.tscn" id="10_t26fn"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eaa4v"]
+size = Vector3(22.9654, 1, 22.647)
+
+[node name="LevelTemplate" type="Node3D"]
+script = ExtResource("1_0la1v")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.997389, -0.0625369, 0.0361057, 0.0546818, -0.327517, 0.943262, -0.0471634, 0.942773, 0.330082, 0, 8.56998, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_7r1an")
+
+[node name="HUD" parent="." instance=ExtResource("2_gpmtw")]
+
+[node name="Player" parent="." instance=ExtResource("3_eniu2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206609, 0.46886, 7.00403)
+
+[node name="CameraController" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(0.707107, -0.640856, 0.298836, 0, 0.422618, 0.906307, -0.707107, -0.640856, 0.298836, 0, 0, 0)
+script = ExtResource("5_adqgu")
+target = NodePath("../Player")
+
+[node name="Camera3D" type="Camera3D" parent="CameraController"]
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 15)
+current = true
+fov = 45.0
+size = 10.0
+
+[node name="Witch" parent="." instance=ExtResource("4_wtugw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.42, 0)
+
+[node name="SummoningCircle" parent="." instance=ExtResource("10_t26fn")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.02, 0)
+
+[node name="Column" parent="." instance=ExtResource("7_ehvhh")]
+collision_layer = 4
+collision_mask = 0
+
+[node name="PlaceableArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)
+collision_layer = 8
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlaceableArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_eaa4v")
+
+[node name="Floors" type="Node3D" parent="."]

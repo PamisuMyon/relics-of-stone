@@ -12,6 +12,7 @@ const SHAPE_CAST_OFFSET = .416
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var move_basis := Basis(Vector3.UP, deg_to_rad(45))
+var can_move := true
 
 var dummy_floor_scene = preload("res://src/environment/floor_dummy.tscn")
 var dummy_floor: FloorDummy
@@ -23,6 +24,9 @@ var is_generating_floor := false
 @onready var level = get_parent() as LevelManager
 
 func _physics_process(delta):
+	if not can_move:
+		return
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
