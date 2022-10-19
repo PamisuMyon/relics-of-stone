@@ -13,22 +13,6 @@ font_size = 28
 font = ExtResource("1_7605a")
 font_size = 28
 
-[sub_resource type="Animation" id="Animation_1fwki"]
-resource_name = "key_change"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BoxKey/LabelKey:label_settings:font_size")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [28, 34, 28]
-}
-
 [sub_resource type="Animation" id="Animation_ms2gd"]
 length = 0.001
 tracks/0/type = "value"
@@ -66,6 +50,22 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1fwki"]
+resource_name = "key_change"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BoxKey/LabelKey:label_settings:font_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [28, 34, 28]
 }
 
 [sub_resource type="Animation" id="Animation_fcqyg"]
@@ -130,6 +130,7 @@ grow_vertical = 2
 script = ExtResource("1_yfqtj")
 
 [node name="BoxKey" type="HBoxContainer" parent="."]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -142,6 +143,7 @@ alignment = 1
 
 [node name="Icon" type="TextureRect" parent="BoxKey"]
 custom_minimum_size = Vector2i(30, 32)
+layout_mode = 2
 offset_left = 6.0
 offset_right = 36.0
 offset_bottom = 32.0
@@ -150,6 +152,7 @@ texture = ExtResource("1_6225p")
 ignore_texture_size = true
 
 [node name="LabelKey" type="Label" parent="BoxKey"]
+layout_mode = 2
 offset_left = 40.0
 offset_right = 95.0
 offset_bottom = 32.0
@@ -158,6 +161,7 @@ text = "- / -"
 label_settings = SubResource("LabelSettings_hlclp")
 
 [node name="BoxScroll" type="HBoxContainer" parent="."]
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -170,6 +174,7 @@ alignment = 1
 
 [node name="Icon" type="TextureRect" parent="BoxScroll"]
 custom_minimum_size = Vector2i(30, 32)
+layout_mode = 2
 offset_right = 30.0
 offset_bottom = 32.0
 size_flags_vertical = 4
@@ -177,6 +182,7 @@ texture = ExtResource("3_ygq8p")
 ignore_texture_size = true
 
 [node name="LabelScroll" type="Label" parent="BoxScroll"]
+layout_mode = 2
 offset_left = 34.0
 offset_right = 45.0
 offset_bottom = 32.0

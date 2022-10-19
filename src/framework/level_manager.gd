@@ -4,6 +4,7 @@ class_name LevelManager
 signal scroll_changed(new_value: int)
 signal scroll_change_failed
 signal key_changed(new_value: int, target: int)
+signal stage_entered
 
 @export var initial_scroll_count := -1
 @export var target_key_count := 1
@@ -56,6 +57,7 @@ func enter_stage():
 	await tween.finished
 	player.can_move = true
 	camera_controller.tracking = true
+	stage_entered.emit()
 
 
 func exit_stage():

@@ -1,30 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8mdu506ehw5p"]
+[gd_scene load_steps=4 format=3 uid="uid://b8mdu506ehw5p"]
 
 [ext_resource type="Script" path="res://src/ui/tutorial.gd" id="1_vhbft"]
 [ext_resource type="Texture2D" uid="uid://drvo5y782xl5" path="res://assets/textures/rounded_512_20.png" id="2_44vfd"]
 [ext_resource type="FontFile" uid="uid://b00ow0mbvbjld" path="res://assets/fonts/mandrill.ttf" id="3_fbpbv"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_5se3x"]
-font = ExtResource("3_fbpbv")
-font_size = 28
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_vhbft")
 
-[node name="Background" type="NinePatchRect" parent="."]
+[node name="Dialog" type="NinePatchRect" parent="."]
 self_modulate = Color(0, 0, 0, 0.164706)
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -415.0
-offset_top = -221.0
+offset_left = -445.0
+offset_top = -248.0
 offset_right = -21.0
 offset_bottom = -11.0
 grow_horizontal = 2
@@ -35,11 +32,11 @@ patch_margin_top = 20
 patch_margin_right = 20
 patch_margin_bottom = 20
 
-[node name="Margin" type="MarginContainer" parent="Background"]
-layout_mode = 1
+[node name="Margin" type="MarginContainer" parent="Dialog"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 16
@@ -47,13 +44,35 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="LabelDialog" type="Label" parent="Background/Margin"]
-layout_mode = 2
+[node name="LabelDialog" type="RichTextLabel" parent="Dialog/Margin"]
 offset_left = 16.0
 offset_top = 16.0
-offset_right = 378.0
-offset_bottom = 194.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 1
-label_settings = SubResource("LabelSettings_5se3x")
+offset_right = 408.0
+offset_bottom = 184.0
+theme_override_fonts/normal_font = ExtResource("3_fbpbv")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "These rituals require some casting materials, see the [color=#86fff1]diamonds[/color] over there, I need you to help me collect them."
+scroll_active = false
+
+[node name="LabelNext" type="RichTextLabel" parent="Dialog"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -80.0
+offset_top = -42.0
+offset_right = -11.0
+offset_bottom = -19.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("3_fbpbv")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[color=#86fff1]E[/color] next→"
+scroll_active = false
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
