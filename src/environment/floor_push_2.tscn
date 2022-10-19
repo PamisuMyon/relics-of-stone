@@ -17,6 +17,7 @@ material = SubResource("StandardMaterial3D_35bci")
 size = Vector2(1.8, 1.8)
 
 [node name="FloorPush2" instance=ExtResource("1_lv4lu")]
+type = 1
 push_distance = 4
 
 [node name="PushArea" type="Area3D" parent="." index="6"]

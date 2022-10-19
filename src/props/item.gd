@@ -51,6 +51,7 @@ func _anim_key_collected():
 	await tween.finished
 	# key + 1
 	level.key_change(1)
+	queue_free()
 
 
 func _anim_scroll_collected():

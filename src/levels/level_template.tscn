@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://ctwecx4ktusxe" path="res://src/props/summoning_circle.tscn" id="10_t26fn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eaa4v"]
-size = Vector3(22.9654, 1, 22.647)
+size = Vector3(80, 1, 80)
 
 [node name="LevelTemplate" type="Node3D"]
 script = ExtResource("1_0la1v")
@@ -59,7 +59,7 @@ monitoring = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_eaa4v")
 
-[node name="Floors" type="Node3D" parent="."]
-
 [node name="DeathWall" parent="." instance=ExtResource("9_gmpft")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
+
+[node name="Floors" type="Node3D" parent="."]

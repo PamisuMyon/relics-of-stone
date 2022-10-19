@@ -15,6 +15,9 @@ var tween: Tween
 
 
 func get_placeable_floor_position(player_pos: Vector3) -> Dictionary:
+	if type != Type.NORMAL:
+		return { "pos": Vector3.ZERO, "can_place": false }
+	
 	var direction = player_pos - global_position
 	var abs_x = abs(direction.x)
 	var abs_z = abs(direction.z)
@@ -62,12 +65,5 @@ func animate_spawn(pos: Vector3, callback: Callable):
 func _on_push_area_body_entered(body: Node3D):
 	if body.get_meta("type") == "player":
 		var player = body # as Player
-		player.can_move = false
 		var target_pos = global_position + -transform.basis.z * push_distance
-		target_pos.y = player.global_position.y
-		var tween = create_tween()
-		tween.set_trans(Tween.TRANS_CUBIC)
-		tween.set_ease(Tween.EASE_OUT)
-		tween.tween_property(player, "global_position", target_pos, .5)
-		await tween.finished
-		player.can_move = true
+		player.pushed(target_pos)

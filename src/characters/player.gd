@@ -105,3 +105,18 @@ func _generate_floor(pos: Vector3):
 	get_parent().add_child(floor_inst)
 	is_generating_floor = true
 	floor_inst.animate_spawn(pos, func(): is_generating_floor = false)
+
+
+var push_tween: Tween
+func pushed(target_pos: Vector3):
+	if push_tween:
+		push_tween.kill()
+	push_tween = create_tween()
+	push_tween.set_trans(Tween.TRANS_CUBIC)
+	push_tween.set_ease(Tween.EASE_OUT)
+	
+	can_move = false
+	target_pos.y = global_position.y
+	push_tween.tween_property(self, "global_position", target_pos, .5)
+	await push_tween.finished
+	can_move = true
