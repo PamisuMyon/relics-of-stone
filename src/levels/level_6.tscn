@@ -1,9 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://rgyy3t05oddg"]
 
 [ext_resource type="PackedScene" uid="uid://bodrg5tuuwmcx" path="res://src/levels/level_template.tscn" id="1_yigpx"]
-[ext_resource type="PackedScene" uid="uid://e6a2c38dj25a" path="res://src/environment/floor_obstacle_fox.tscn" id="2_jnwl8"]
+[ext_resource type="PackedScene" uid="uid://48jm2seu840k" path="res://src/environment/floor_obstacle_fox.tscn" id="2_jnwl8"]
 [ext_resource type="PackedScene" uid="uid://cqqakjex5toh0" path="res://src/environment/floor.tscn" id="2_xgvx8"]
-[ext_resource type="PackedScene" uid="uid://c18xf0itmmau" path="res://src/environment/floor_obstacle_stag.tscn" id="2_yldty"]
+[ext_resource type="PackedScene" uid="uid://cvnm8s1notvk3" path="res://src/environment/floor_obstacle_stag.tscn" id="2_yldty"]
 [ext_resource type="PackedScene" uid="uid://7e0akh2q7e2w" path="res://src/environment/floor_push_2.tscn" id="3_hrd4q"]
 [ext_resource type="PackedScene" uid="uid://bsik5aj203u6r" path="res://src/props/crystal.tscn" id="3_ybcql"]
 [ext_resource type="PackedScene" uid="uid://b55l867boeih3" path="res://src/props/scroll.tscn" id="4_4tftf"]
