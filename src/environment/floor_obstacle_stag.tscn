@@ -1,6 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://c18xf0itmmau"]
+[gd_scene load_steps=4 format=3 uid="uid://cvnm8s1notvk3"]
 
-[ext_resource type="PackedScene" uid="uid://b6fax8hokfjdg" path="res://assets/ruins/Floor_SquareLarge.fbx" id="1_iorbx"]
+[ext_resource type="PackedScene" uid="uid://c5v33e3mtucva" path="res://assets/ruins/Floor_SquareLarge.glb" id="1_iorbx"]
 [ext_resource type="PackedScene" uid="uid://ckh8rrluo2bxv" path="res://assets/ruins/Statue_Stag.glb" id="3_ipgym"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8h6nt"]

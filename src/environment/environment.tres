@@ -10,6 +10,7 @@ background_color = Color(0.568627, 0.678431, 0.843137, 1)
 sky = SubResource("Sky_brevj")
 ambient_light_source = 2
 ambient_light_color = Color(0.568627, 0.678431, 0.843137, 1)
+fog_enabled = true
 fog_light_color = Color(0.486275, 0.560784, 0.509804, 1)
 fog_height = -15.0
 fog_height_density = 0.1

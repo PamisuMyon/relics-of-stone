@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c5khvcxgc0a17"
-path="res://.godot/imported/Column.fbx-026342d9e5b63e2292a1b94d0d8298e7.scn"
+uid="uid://c5v33e3mtucva"
+path="res://.godot/imported/Floor_SquareLarge.glb-ed26c3165b2d24219520b806d43ce84d.scn"
 
 [deps]
 
-source_file="res://assets/ruins/Column.fbx"
-dest_files=["res://.godot/imported/Column.fbx-026342d9e5b63e2292a1b94d0d8298e7.scn"]
+source_file="res://assets/ruins/Floor_SquareLarge.glb"
+dest_files=["res://.godot/imported/Floor_SquareLarge.glb-ed26c3165b2d24219520b806d43ce84d.scn"]
 
 [params]
 
@@ -28,11 +28,7 @@ animation/fps=30
 import_script/path=""
 _subresources={
 "materials": {
-"DarkGrey_Floor": {
-"use_external/enabled": true,
-"use_external/path": "res://assets/ruins/mat_floor_dark.tres"
-},
-"Grey_Floor": {
+"Main": {
 "use_external/enabled": true,
 "use_external/path": "res://assets/ruins/mat_floor.tres"
 }
