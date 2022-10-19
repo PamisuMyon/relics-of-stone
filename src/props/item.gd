@@ -64,7 +64,7 @@ func _anim_scroll_collected():
 	# anim up
 	var target_pos_1 = global_position
 	target_pos_1.y += 2
-	tween.tween_property(self, "global_position", target_pos_1, .4)
+	tween.tween_property(self, "global_position", target_pos_1, .2)
 	tween.tween_interval(.2)
 	
 	# anim to player

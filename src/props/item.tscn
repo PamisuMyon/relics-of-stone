@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/props/item.gd" id="1_3whjk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qlvqh"]
-radius = 0.3
+radius = 0.7
 
 [node name="Item" type="Area3D"]
 collision_layer = 2
