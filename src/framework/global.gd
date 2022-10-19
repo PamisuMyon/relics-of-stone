@@ -1,7 +1,8 @@
 extends Node
 
 var levels = [
-	"res://src/levels/test_map.tscn"
+#	"res://src/levels/level_tutorial.tscn",
+	"res://src/levels/test_map.tscn",
 ]
 
 var current = 0

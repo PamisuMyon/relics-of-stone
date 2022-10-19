@@ -1,11 +1,12 @@
 extends Control
 
+var level: LevelManager
 @onready var label_key = $BoxKey/LabelKey as Label
 @onready var label_scroll = $BoxScroll/LabelScroll as Label
 @onready var anim = $AnimationPlayer as AnimationPlayer
 
 func _ready():
-	var level = get_parent() as LevelManager
+	level = get_parent() as LevelManager
 	level.key_changed.connect(_on_key_changed)
 	level.scroll_changed.connect(_on_scroll_changed)
 	level.scroll_change_failed.connect(_on_scroll_change_failed)
@@ -26,3 +27,7 @@ func _on_scroll_changed(new_value: int):
 
 func _on_scroll_change_failed():
 	anim.play("scroll_change_fail")
+
+
+func _on_button_restart_pressed():
+	Global.restart()

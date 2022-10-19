@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7yinyokimmcv"]
+[gd_scene load_steps=18 format=3 uid="uid://b7yinyokimmcv"]
 
 [ext_resource type="Script" path="res://src/framework/level_manager.gd" id="1_8i1b0"]
 [ext_resource type="PackedScene" uid="uid://xpqtxq64qavp" path="res://src/characters/player.tscn" id="2_pt22t"]
@@ -9,15 +9,20 @@
 [ext_resource type="PackedScene" uid="uid://dt4c8hqxpdjv8" path="res://src/characters/witch.tscn" id="5_fwtn8"]
 [ext_resource type="PackedScene" uid="uid://bsik5aj203u6r" path="res://src/props/crystal.tscn" id="6_xji28"]
 [ext_resource type="PackedScene" uid="uid://ckyeh1q7j8dwb" path="res://src/ui/hud.tscn" id="7_5kwy0"]
+[ext_resource type="PackedScene" uid="uid://d1poag1pt2t5a" path="res://src/environment/floor_push_3.tscn" id="9_e06j2"]
 [ext_resource type="PackedScene" uid="uid://b55l867boeih3" path="res://src/props/scroll.tscn" id="10_1b8se"]
+[ext_resource type="PackedScene" uid="uid://c18xf0itmmau" path="res://src/environment/floor_obstacle_stag.tscn" id="11_1a12s"]
 [ext_resource type="PackedScene" uid="uid://ctwecx4ktusxe" path="res://src/props/summoning_circle.tscn" id="11_fakg0"]
+[ext_resource type="PackedScene" uid="uid://7e0akh2q7e2w" path="res://src/environment/floor_push_2.tscn" id="12_3jwcb"]
+[ext_resource type="PackedScene" uid="uid://7yrqg4suu65c" path="res://src/environment/death_wall.tscn" id="14_6u17k"]
+[ext_resource type="PackedScene" uid="uid://e6a2c38dj25a" path="res://src/environment/floor_obstacle_fox.tscn" id="15_q4khi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k0x70"]
 size = Vector3(22.9654, 1, 22.647)
 
 [node name="TestMap" type="Node3D"]
 script = ExtResource("1_8i1b0")
-initial_scroll_count = 1
+initial_scroll_count = 10
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.997389, -0.0625369, 0.0361057, 0.0546818, -0.327517, 0.943262, -0.0471634, 0.942773, 0.330082, 0, 8.56998, 0)
@@ -50,11 +55,32 @@ size = 10.0
 [node name="Floor" parent="Floors" instance=ExtResource("4_cujhq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
 
+[node name="Floor4" parent="Floors" instance=ExtResource("4_cujhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+
+[node name="Floor5" parent="Floors" instance=ExtResource("4_cujhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -7)
+
 [node name="Floor2" parent="Floors" instance=ExtResource("4_cujhq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 7)
 
 [node name="Floor3" parent="Floors" instance=ExtResource("4_cujhq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 7)
+
+[node name="FloorPush2" parent="Floors" instance=ExtResource("12_3jwcb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 7)
+
+[node name="FloorPush3" parent="Floors" instance=ExtResource("12_3jwcb")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 8, 0, 2)
+
+[node name="FloorPush4" parent="Floors" instance=ExtResource("9_e06j2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -1)
+
+[node name="FloorObstacleFox" parent="Floors" instance=ExtResource("15_q4khi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -7)
+
+[node name="FloorObstacleStag" parent="Floors" instance=ExtResource("11_1a12s")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6, 0, 3)
 
 [node name="Column" parent="." instance=ExtResource("3_3hstp")]
 collision_layer = 4
@@ -78,3 +104,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, 7)
 
 [node name="SummoningCircle" parent="." instance=ExtResource("11_fakg0")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.02, 0)
+
+[node name="DeathWall" parent="." instance=ExtResource("14_6u17k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)

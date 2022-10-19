@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://e6a2c38dj25a"]
+
+[ext_resource type="PackedScene" uid="uid://b6fax8hokfjdg" path="res://assets/ruins/Floor_SquareLarge.fbx" id="1_iorbx"]
+[ext_resource type="PackedScene" uid="uid://brp5858ii3us0" path="res://assets/ruins/Statue_Fox.glb" id="2_xdb5b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8h6nt"]
+size = Vector3(1.98944, 4.9058, 1.98901)
+
+[node name="FloorObstacleFox" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.34825, 0)
+shape = SubResource("BoxShape3D_8h6nt")
+
+[node name="Floor_SquareLarge" parent="." instance=ExtResource("1_iorbx")]
+
+[node name="Statue_Fox" parent="." instance=ExtResource("2_xdb5b")]
+transform = Transform3D(1.66, 0, 0, 0, 1.66, 0, 0, 0, 1.66, 0, 0, 0)

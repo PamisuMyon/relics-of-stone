@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://7e0akh2q7e2w"]
+
+[ext_resource type="PackedScene" uid="uid://cqqakjex5toh0" path="res://src/environment/floor.tscn" id="1_lv4lu"]
+[ext_resource type="Texture2D" uid="uid://bxpx078q51yet" path="res://assets/textures/arrow2.png" id="2_rq76n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0bd8g"]
+size = Vector3(1.8, 0.2, 1.8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_35bci"]
+transparency = 1
+albedo_color = Color(0.541176, 0.94902, 0.662745, 1)
+albedo_texture = ExtResource("2_rq76n")
+metallic_specular = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_8f1b2"]
+material = SubResource("StandardMaterial3D_35bci")
+size = Vector2(1.8, 1.8)
+
+[node name="FloorPush2" instance=ExtResource("1_lv4lu")]
+push_distance = 4
+
+[node name="PushArea" type="Area3D" parent="." index="6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0337638, 0)
+collision_layer = 4
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PushArea" index="0"]
+shape = SubResource("BoxShape3D_0bd8g")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PushArea" index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.00424683, 0)
+mesh = SubResource("QuadMesh_8f1b2")
+
+[connection signal="body_entered" from="PushArea" to="." method="_on_push_area_body_entered"]

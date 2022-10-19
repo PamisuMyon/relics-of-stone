@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://7yrqg4suu65c"]
+
+[ext_resource type="Script" path="res://src/environment/death_wall.gd" id="1_peof1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i0n4r"]
+size = Vector3(100, 1, 100)
+
+[node name="DeathWall" type="Area3D"]
+collision_layer = 4
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_peof1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_i0n4r")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

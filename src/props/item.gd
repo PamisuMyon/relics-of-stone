@@ -75,3 +75,4 @@ func _anim_scroll_collected():
 	await tween.finished
 	# scroll + 1
 	level.scroll_change(1)
+	queue_free()

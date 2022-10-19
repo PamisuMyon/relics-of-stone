@@ -25,6 +25,7 @@ func _process(delta):
 
 func _on_stage_entered():
 	level.player.can_move = false
+	level.witch.anim.play("Idle")
 	dialog.visible = true
 	for content in dialog_contents:
 		label_next.visible = false
@@ -33,6 +34,7 @@ func _on_stage_entered():
 		await next_pressed
 	dialog.visible = false
 	level.player.can_move = true
+	level.witch.anim.play("Pray")
 	
 
 func _anim_show_dialog_content(content: String):

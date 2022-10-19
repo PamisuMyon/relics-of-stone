@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://ckyeh1q7j8dwb"]
+[gd_scene load_steps=13 format=3 uid="uid://ckyeh1q7j8dwb"]
 
 [ext_resource type="Texture2D" uid="uid://dehxb5i1jnwy2" path="res://assets/textures/Crystal5.png" id="1_6225p"]
 [ext_resource type="FontFile" uid="uid://b00ow0mbvbjld" path="res://assets/fonts/mandrill.ttf" id="1_7605a"]
 [ext_resource type="Script" path="res://src/ui/hud.gd" id="1_yfqtj"]
 [ext_resource type="Texture2D" uid="uid://cy5touamoun4h" path="res://assets/textures/Scroll.png" id="3_ygq8p"]
+[ext_resource type="Texture2D" uid="uid://bmepo0lakkkkx" path="res://assets/textures/restart.png" id="5_xc7ng"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hlclp"]
 font = ExtResource("1_7605a")
@@ -130,7 +131,6 @@ grow_vertical = 2
 script = ExtResource("1_yfqtj")
 
 [node name="BoxKey" type="HBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -143,7 +143,6 @@ alignment = 1
 
 [node name="Icon" type="TextureRect" parent="BoxKey"]
 custom_minimum_size = Vector2i(30, 32)
-layout_mode = 2
 offset_left = 6.0
 offset_right = 36.0
 offset_bottom = 32.0
@@ -152,7 +151,6 @@ texture = ExtResource("1_6225p")
 ignore_texture_size = true
 
 [node name="LabelKey" type="Label" parent="BoxKey"]
-layout_mode = 2
 offset_left = 40.0
 offset_right = 95.0
 offset_bottom = 32.0
@@ -161,7 +159,6 @@ text = "- / -"
 label_settings = SubResource("LabelSettings_hlclp")
 
 [node name="BoxScroll" type="HBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -174,7 +171,6 @@ alignment = 1
 
 [node name="Icon" type="TextureRect" parent="BoxScroll"]
 custom_minimum_size = Vector2i(30, 32)
-layout_mode = 2
 offset_right = 30.0
 offset_bottom = 32.0
 size_flags_vertical = 4
@@ -182,7 +178,6 @@ texture = ExtResource("3_ygq8p")
 ignore_texture_size = true
 
 [node name="LabelScroll" type="Label" parent="BoxScroll"]
-layout_mode = 2
 offset_left = 34.0
 offset_right = 45.0
 offset_bottom = 32.0
@@ -190,7 +185,22 @@ grow_horizontal = 2
 text = "-"
 label_settings = SubResource("LabelSettings_0neic")
 
+[node name="ButtonRestart" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -29.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 29.0
+grow_horizontal = 0
+shortcut_in_tooltip = false
+icon = ExtResource("5_xc7ng")
+expand_icon = true
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_4lvyj")
 }
+
+[connection signal="pressed" from="ButtonRestart" to="." method="_on_button_restart_pressed"]

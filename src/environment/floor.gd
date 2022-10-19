@@ -1,6 +1,11 @@
 extends StaticBody3D
 class_name Floor
 
+enum Type { NORMAL, PUSH }
+
+@export var type: Type = Type.NORMAL
+@export var push_distance := 0
+
 @onready var shape_cast_left: ShapeCast3D = $ShapeCastLeft
 @onready var shape_cast_right: ShapeCast3D = $ShapeCastRight
 @onready var shape_cast_forward: ShapeCast3D = $ShapeCastForward
@@ -52,3 +57,17 @@ func animate_spawn(pos: Vector3, callback: Callable):
 	global_position = pos
 	tween.tween_property(self, "position", final_pos, .7)
 	tween.tween_callback(callback)
+
+
+func _on_push_area_body_entered(body: Node3D):
+	if body.get_meta("type") == "player":
+		var player = body # as Player
+		player.can_move = false
+		var target_pos = global_position + -transform.basis.z * push_distance
+		target_pos.y = player.global_position.y
+		var tween = create_tween()
+		tween.set_trans(Tween.TRANS_CUBIC)
+		tween.set_ease(Tween.EASE_OUT)
+		tween.tween_property(player, "global_position", target_pos, .5)
+		await tween.finished
+		player.can_move = true

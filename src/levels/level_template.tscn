@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bodrg5tuuwmcx"]
+[gd_scene load_steps=11 format=3 uid="uid://bodrg5tuuwmcx"]
 
 [ext_resource type="Script" path="res://src/framework/level_manager.gd" id="1_0la1v"]
 [ext_resource type="Environment" uid="uid://7llcpbx14r1" path="res://src/environment/environment.tres" id="1_7r1an"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dt4c8hqxpdjv8" path="res://src/characters/witch.tscn" id="4_wtugw"]
 [ext_resource type="Script" path="res://src/framework/camera_controller_3d.gd" id="5_adqgu"]
 [ext_resource type="PackedScene" uid="uid://mfwk4y6ysj76" path="res://src/environment/column.tscn" id="7_ehvhh"]
+[ext_resource type="PackedScene" uid="uid://7yrqg4suu65c" path="res://src/environment/death_wall.tscn" id="9_gmpft"]
 [ext_resource type="PackedScene" uid="uid://ctwecx4ktusxe" path="res://src/props/summoning_circle.tscn" id="10_t26fn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eaa4v"]
@@ -25,7 +26,7 @@ environment = ExtResource("1_7r1an")
 [node name="HUD" parent="." instance=ExtResource("2_gpmtw")]
 
 [node name="Player" parent="." instance=ExtResource("3_eniu2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206609, 0.46886, 7.00403)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206609, 0.46886, -1.42174)
 
 [node name="CameraController" type="Node3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(0.707107, -0.640856, 0.298836, 0, 0.422618, 0.906307, -0.707107, -0.640856, 0.298836, 0, 0, 0)
@@ -59,3 +60,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 shape = SubResource("BoxShape3D_eaa4v")
 
 [node name="Floors" type="Node3D" parent="."]
+
+[node name="DeathWall" parent="." instance=ExtResource("9_gmpft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
