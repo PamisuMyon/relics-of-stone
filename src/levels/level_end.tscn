@@ -1,15 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://dvh64sb21gfwg"]
+[gd_scene load_steps=7 format=3 uid="uid://dvh64sb21gfwg"]
 
 [ext_resource type="Environment" uid="uid://7llcpbx14r1" path="res://src/environment/environment.tres" id="1_7r1an"]
 [ext_resource type="Script" path="res://src/framework/camera_rotator.gd" id="3_hdmeo"]
-[ext_resource type="Script" path="res://src/ui/title_ui.gd" id="6_3dqld"]
+[ext_resource type="Script" path="res://src/ui/end_ui.gd" id="5_y1p3y"]
 [ext_resource type="FontFile" uid="uid://b00ow0mbvbjld" path="res://assets/fonts/mandrill.ttf" id="6_grv8a"]
-[ext_resource type="Texture2D" uid="uid://bpdn2smgkr0p8" path="res://assets/textures/menu.png" id="7_8csyi"]
 [ext_resource type="PackedScene" uid="uid://mfwk4y6ysj76" path="res://src/environment/column.tscn" id="7_ehvhh"]
-[ext_resource type="PackedScene" uid="uid://f3eau6vl4qsi" path="res://src/ui/menu_panel.tscn" id="9_onrh2"]
 [ext_resource type="PackedScene" path="res://src/props/summoning_circle.tscn" id="10_t26fn"]
 
-[node name="LevelTitle" type="Node3D"]
+[node name="LevelEnd" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.997389, -0.0625369, 0.0361057, 0.0546818, -0.327517, 0.943262, -0.0471634, 0.942773, 0.330082, 0, 8.56998, 0)
@@ -37,17 +35,53 @@ collision_mask = 0
 
 [node name="Floors" type="Node3D" parent="."]
 
-[node name="TitleUI" type="Control" parent="."]
+[node name="EndUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("6_3dqld")
+script = ExtResource("5_y1p3y")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TitleUI"]
-layout_mode = 1
+[node name="VBoxContainer2" type="VBoxContainer" parent="EndUI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -273.0
+offset_right = 162.0
+offset_bottom = -154.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="EndUI/VBoxContainer2"]
+offset_right = 324.0
+offset_bottom = 76.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_grv8a")
+theme_override_font_sizes/font_size = 72
+text = "You Made It!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="EndUI/VBoxContainer2"]
+offset_top = 84.0
+offset_right = 324.0
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("6_grv8a")
+theme_override_font_sizes/font_size = 32
+text = "Thanks for playing!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EndUI"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -61,32 +95,13 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
 
-[node name="StartButton" type="Button" parent="TitleUI/VBoxContainer"]
-layout_mode = 2
+[node name="BackButton" type="Button" parent="EndUI/VBoxContainer"]
 offset_right = 158.0
 offset_bottom = 37.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_grv8a")
 theme_override_font_sizes/font_size = 28
-text = "Start"
+text = "Back to Title"
 
-[node name="ButtonMenu" type="Button" parent="TitleUI"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -29.0
-offset_top = 5.0
-offset_right = -5.0
-offset_bottom = 29.0
-grow_horizontal = 0
-shortcut_in_tooltip = false
-icon = ExtResource("7_8csyi")
-expand_icon = true
-
-[node name="MenuPanel" parent="TitleUI" instance=ExtResource("9_onrh2")]
-layout_mode = 1
-
-[connection signal="pressed" from="TitleUI/VBoxContainer/StartButton" to="TitleUI" method="_on_start_button_pressed"]
-[connection signal="pressed" from="TitleUI/ButtonMenu" to="TitleUI" method="_on_button_menu_pressed"]
+[connection signal="pressed" from="EndUI/VBoxContainer/BackButton" to="EndUI" method="_on_back_button_pressed"]

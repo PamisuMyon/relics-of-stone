@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://b55l867boeih3"]
+[gd_scene load_steps=5 format=3 uid="uid://b55l867boeih3"]
 
 [ext_resource type="PackedScene" uid="uid://bq14180xnxp8r" path="res://src/props/item.tscn" id="1_fefoc"]
 [ext_resource type="PackedScene" uid="uid://cgr51l83qxt71" path="res://assets/props/Scroll.glb" id="2_rnem7"]
+[ext_resource type="AudioStream" uid="uid://d3mopoi6u88j0" path="res://assets/audio/cloth3.ogg" id="3_xouf1"]
+[ext_resource type="AudioStream" uid="uid://c61ti7xr382jv" path="res://assets/audio/cloth4.ogg" id="4_d62qg"]
 
 [node name="Scroll" instance=ExtResource("1_fefoc")]
 type = 1
 
 [node name="Scroll" parent="." index="1" instance=ExtResource("2_rnem7")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+
+[node name="PickUp" parent="." index="2"]
+streams = [ExtResource("3_xouf1"), ExtResource("4_d62qg")]

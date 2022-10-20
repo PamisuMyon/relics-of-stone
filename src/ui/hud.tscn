@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dxgctsew18o06"]
+[gd_scene load_steps=17 format=3 uid="uid://dxgctsew18o06"]
 
 [ext_resource type="Texture2D" uid="uid://dehxb5i1jnwy2" path="res://assets/textures/Crystal5.png" id="1_6225p"]
 [ext_resource type="FontFile" uid="uid://b00ow0mbvbjld" path="res://assets/fonts/mandrill.ttf" id="1_7605a"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bpdn2smgkr0p8" path="res://assets/textures/menu.png" id="5_11bm6"]
 [ext_resource type="Texture2D" uid="uid://bmepo0lakkkkx" path="res://assets/textures/restart.png" id="5_xc7ng"]
 [ext_resource type="PackedScene" uid="uid://f3eau6vl4qsi" path="res://src/ui/menu_panel.tscn" id="7_rghrj"]
+[ext_resource type="Script" path="res://src/framework/sound_player.gd" id="8_2lp5f"]
+[ext_resource type="AudioStream" uid="uid://bvnsut072f6vn" path="res://assets/audio/error.ogg" id="9_rcu6r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hlclp"]
 font = ExtResource("1_7605a")
@@ -133,6 +135,7 @@ grow_vertical = 2
 script = ExtResource("1_yfqtj")
 
 [node name="BoxKey" type="HBoxContainer" parent="."]
+layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -145,6 +148,7 @@ alignment = 1
 
 [node name="Icon" type="TextureRect" parent="BoxKey"]
 custom_minimum_size = Vector2i(30, 32)
+layout_mode = 2
 offset_left = 6.0
 offset_right = 36.0
 offset_bottom = 32.0
@@ -153,6 +157,7 @@ texture = ExtResource("1_6225p")
 ignore_texture_size = true
 
 [node name="LabelKey" type="Label" parent="BoxKey"]
+layout_mode = 2
 offset_left = 40.0
 offset_right = 95.0
 offset_bottom = 32.0
@@ -161,6 +166,7 @@ text = "- / -"
 label_settings = SubResource("LabelSettings_hlclp")
 
 [node name="BoxScroll" type="HBoxContainer" parent="."]
+layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -173,6 +179,7 @@ alignment = 1
 
 [node name="Icon" type="TextureRect" parent="BoxScroll"]
 custom_minimum_size = Vector2i(30, 32)
+layout_mode = 2
 offset_right = 30.0
 offset_bottom = 32.0
 size_flags_vertical = 4
@@ -180,6 +187,7 @@ texture = ExtResource("3_ygq8p")
 ignore_texture_size = true
 
 [node name="LabelScroll" type="Label" parent="BoxScroll"]
+layout_mode = 2
 offset_left = 34.0
 offset_right = 45.0
 offset_bottom = 32.0
@@ -188,6 +196,7 @@ text = "-"
 label_settings = SubResource("LabelSettings_0neic")
 
 [node name="ButtonMenu" type="Button" parent="."]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -201,6 +210,7 @@ icon = ExtResource("5_11bm6")
 expand_icon = true
 
 [node name="ButtonRestart" type="Button" parent="."]
+layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -219,7 +229,12 @@ libraries = {
 }
 
 [node name="MenuPanel" parent="." instance=ExtResource("7_rghrj")]
-self_modulate = Color(0, 0, 0, 0.196078)
+layout_mode = 1
+
+[node name="ErrorSound" type="AudioStreamPlayer" parent="."]
+bus = &"Sound"
+script = ExtResource("8_2lp5f")
+streams = [ExtResource("9_rcu6r")]
 
 [connection signal="pressed" from="ButtonMenu" to="." method="_on_button_menu_pressed"]
 [connection signal="pressed" from="ButtonRestart" to="." method="_on_button_restart_pressed"]

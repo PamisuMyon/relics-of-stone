@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://src/framework/level_manager.gd" id="1_0la1v"]
 [ext_resource type="Environment" uid="uid://7llcpbx14r1" path="res://src/environment/environment.tres" id="1_7r1an"]
-[ext_resource type="PackedScene" uid="uid://ckyeh1q7j8dwb" path="res://src/ui/hud.tscn" id="2_gpmtw"]
+[ext_resource type="PackedScene" uid="uid://dxgctsew18o06" path="res://src/ui/hud.tscn" id="2_gpmtw"]
 [ext_resource type="PackedScene" uid="uid://xpqtxq64qavp" path="res://src/characters/player.tscn" id="3_eniu2"]
 [ext_resource type="PackedScene" uid="uid://dt4c8hqxpdjv8" path="res://src/characters/witch.tscn" id="4_wtugw"]
 [ext_resource type="Script" path="res://src/framework/camera_controller_3d.gd" id="5_adqgu"]
 [ext_resource type="PackedScene" uid="uid://mfwk4y6ysj76" path="res://src/environment/column.tscn" id="7_ehvhh"]
 [ext_resource type="PackedScene" uid="uid://7yrqg4suu65c" path="res://src/environment/death_wall.tscn" id="9_gmpft"]
-[ext_resource type="PackedScene" uid="uid://ctwecx4ktusxe" path="res://src/props/summoning_circle.tscn" id="10_t26fn"]
+[ext_resource type="PackedScene" path="res://src/props/summoning_circle.tscn" id="10_t26fn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eaa4v"]
 size = Vector3(80, 1, 80)
@@ -38,6 +38,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 15
 current = true
 fov = 45.0
 size = 10.0
+
+[node name="AudioListener3D" type="AudioListener3D" parent="CameraController"]
 
 [node name="Witch" parent="." instance=ExtResource("4_wtugw")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.42, 0)

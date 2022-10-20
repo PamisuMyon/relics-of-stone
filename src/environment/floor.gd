@@ -60,6 +60,7 @@ func animate_spawn(pos: Vector3, callback: Callable):
 	global_position = pos
 	tween.tween_property(self, "position", final_pos, .7)
 	tween.tween_callback(callback)
+	$MoveSound.play_random()
 
 
 func _on_push_area_body_entered(body: Node3D):
@@ -67,3 +68,4 @@ func _on_push_area_body_entered(body: Node3D):
 		var player = body # as Player
 		var target_pos = global_position + -transform.basis.z * push_distance
 		player.pushed(target_pos)
+		$PushSound.play_random()

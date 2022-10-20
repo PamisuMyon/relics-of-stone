@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqqakjex5toh0"]
+[gd_scene load_steps=8 format=3 uid="uid://cqqakjex5toh0"]
 
 [ext_resource type="Script" path="res://src/environment/floor.gd" id="1_dvxn4"]
 [ext_resource type="PackedScene" uid="uid://c5v33e3mtucva" path="res://assets/ruins/Floor_SquareLarge.glb" id="2_47u47"]
+[ext_resource type="Script" path="res://src/framework/sound_player.gd" id="3_antmg"]
+[ext_resource type="AudioStream" uid="uid://dwq8xg2qgassj" path="res://assets/audio/stone_push.ogg" id="4_37kjt"]
+[ext_resource type="AudioStream" uid="uid://cscfrrl3s8lfc" path="res://assets/audio/space shield.ogg" id="5_nyi5f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rf36l"]
 size = Vector3(1.982, 0.15, 1.982)
@@ -51,3 +54,13 @@ shape = SubResource("BoxShape3D_eltb2")
 max_results = 5
 collision_mask = 13
 collide_with_areas = true
+
+[node name="MoveSound" type="AudioStreamPlayer" parent="."]
+bus = &"Sound"
+script = ExtResource("3_antmg")
+streams = [ExtResource("4_37kjt")]
+
+[node name="PushSound" type="AudioStreamPlayer" parent="."]
+bus = &"Sound"
+script = ExtResource("3_antmg")
+streams = [ExtResource("5_nyi5f")]

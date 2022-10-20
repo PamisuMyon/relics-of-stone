@@ -34,6 +34,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://src/characters/player.gd"
 }, {
+"base": "AudioStreamPlayer",
+"class": &"SoundPlayer",
+"language": &"GDScript",
+"path": "res://src/framework/sound_player.gd"
+}, {
 "base": "MeshInstance3D",
 "class": &"SummoningCircle",
 "language": &"GDScript",
@@ -45,22 +50,26 @@ _global_script_class_icons={
 "FloorDummy": "",
 "LevelManager": "",
 "Player": "",
+"SoundPlayer": "",
 "SummoningCircle": ""
 }
 
 [application]
 
 config/name="GWJ50"
-run/main_scene="res://src/levels/test_map.tscn"
+run/main_scene="res://src/levels/level_title.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://src/framework/global.gd"
+Music="res://src/framework/music.tscn"
 
 [display]
 
+window/size/viewport_width=1024
+window/size/viewport_height=640
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 

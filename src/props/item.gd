@@ -48,6 +48,8 @@ func _anim_key_collected():
 	tween.tween_property(self, "global_position", target_pos_2, .5)
 	tween.tween_property(self, "scale", Vector3(.1, .1, .1), .5)
 	
+	$PickUp.play_random()
+	
 	await tween.finished
 	# key + 1
 	level.key_change(1)
@@ -72,6 +74,8 @@ func _anim_scroll_collected():
 	var target_pos_2 = level.player.global_position
 	tween.tween_property(self, "global_position", target_pos_2, .2)
 	tween.tween_property(self, "scale", Vector3(.01, .01, .01), .2)
+	
+	$PickUp.play_random()
 	
 	await tween.finished
 	# scroll + 1

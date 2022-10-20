@@ -2,6 +2,7 @@ extends CharacterBody3D
 class_name Player
 
 const SHAPE_CAST_OFFSET = .416
+const FOOTSTEP_INTERVAL = .4
 
 @export var scroll_count = -1
 
@@ -17,11 +18,14 @@ var can_move := true
 var dummy_floor_scene = preload("res://src/environment/floor_dummy.tscn")
 var dummy_floor: FloorDummy
 var is_generating_floor := false
+var footstep_counter := FOOTSTEP_INTERVAL
 
 @onready var model = $Model
 @onready var ray_cast_ground: RayCast3D = $RayCastGround
 @onready var shape_cast_ledge: ShapeCast3D = $ShapeCastLedge
-@onready var level = get_parent() as LevelManager
+@onready var level := get_parent() as LevelManager
+@onready var footstep := $Footstep as SoundPlayer
+
 
 func _physics_process(delta):
 	if not can_move:
@@ -50,6 +54,12 @@ func _physics_process(delta):
 
 	move_and_slide()
 	_smooth_look_at(-target_dir)
+	
+	if footstep_counter <= 0 and direction:
+		footstep.play_random()
+		footstep_counter = FOOTSTEP_INTERVAL
+	else:
+		footstep_counter -= delta
 
 
 func _smooth_look_at(dir: Vector3):

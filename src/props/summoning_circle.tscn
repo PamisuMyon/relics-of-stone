@@ -1,7 +1,9 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=11 format=3 uid="uid://bplqsfx6i07v4"]
 
 [ext_resource type="Texture2D" uid="uid://joerphuc77m7" path="res://assets/textures/circle4.png" id="1_se1fc"]
 [ext_resource type="Script" path="res://src/props/summoning_circle.gd" id="2_8j6rv"]
+[ext_resource type="AudioStream" uid="uid://dxhmre55qxnfa" path="res://assets/audio/magic.ogg" id="3_4vx0c"]
+[ext_resource type="AudioStream" uid="uid://cfjpssawy3cbp" path="res://assets/audio/magic_strike.ogg" id="4_cuw8g"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tw26g"]
 transparency = 1
@@ -16,9 +18,36 @@ emission_texture = ExtResource("1_se1fc")
 material = SubResource("StandardMaterial3D_tw26g")
 size = Vector2(3.2, 3.2)
 
+[sub_resource type="Animation" id="Animation_jl6h3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:mesh:material:emission_energy_multiplier")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("WarpSound:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_sv5lj"]
 resource_name = "activate"
-length = 1.8
+length = 3.8
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -45,20 +74,45 @@ tracks/1/keys = {
 "method": &"on_activate_anim_finished"
 }]
 }
-
-[sub_resource type="Animation" id="Animation_jl6h3"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:mesh:material:emission_energy_multiplier")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("WarpSound")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_4vx0c")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StrikeSound")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_cuw8g")
+}],
+"times": PackedFloat32Array(1.8)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("WarpSound:volume_db")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(2.8, 3.8),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [1.0]
+"values": [0.0, -80.0]
 }
 
 [sub_resource type="Animation" id="Animation_3emuy"]
@@ -94,3 +148,11 @@ script = ExtResource("2_8j6rv")
 libraries = {
 "": SubResource("AnimationLibrary_7oqls")
 }
+
+[node name="WarpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_4vx0c")
+bus = &"Sound"
+
+[node name="StrikeSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_cuw8g")
+bus = &"Sound"

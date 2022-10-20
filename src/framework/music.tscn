@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://blx1207yd0q6o"]
+
+[ext_resource type="Script" path="res://src/framework/music.gd" id="1_he5jw"]
+[ext_resource type="AudioStream" uid="uid://c4jihps860fn6" path="res://assets/audio/DST-GrassLands.mp3" id="2_f6ap4"]
+
+[node name="Music" type="AudioStreamPlayer"]
+volume_db = -12.0
+autoplay = true
+bus = &"Music"
+script = ExtResource("1_he5jw")
+streams = [ExtResource("2_f6ap4")]
+
+[connection signal="finished" from="." to="." method="_on_finished"]

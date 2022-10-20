@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dtctssvcr1xtn"
+path="res://.godot/imported/space shield.ogg-c17d4481059bb063216e971e922a45ad.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/space shield.ogg"
+dest_files=["res://.godot/imported/space shield.ogg-c17d4481059bb063216e971e922a45ad.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

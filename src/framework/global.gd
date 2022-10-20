@@ -24,14 +24,12 @@ func _physics_process(delta):
 
 
 func restart():
-#	get_tree().change_scene_to_file(current_path)
 	get_tree().reload_current_scene()
 
 
 func next_level():
 	current += 1
-	if current > levels.size() - 1:
-		current = 0
+	current %= levels.size()
 	get_tree().change_scene_to_file(levels[current])
 
 

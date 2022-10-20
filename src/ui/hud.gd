@@ -28,6 +28,7 @@ func _on_scroll_changed(new_value: int):
 
 func _on_scroll_change_failed():
 	anim.play("scroll_change_fail")
+	$ErrorSound.play_random()
 
 
 func _on_button_restart_pressed():

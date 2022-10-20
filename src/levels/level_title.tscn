@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bpdn2smgkr0p8" path="res://assets/textures/menu.png" id="7_8csyi"]
 [ext_resource type="PackedScene" uid="uid://mfwk4y6ysj76" path="res://src/environment/column.tscn" id="7_ehvhh"]
 [ext_resource type="PackedScene" uid="uid://f3eau6vl4qsi" path="res://src/ui/menu_panel.tscn" id="9_onrh2"]
-[ext_resource type="PackedScene" path="res://src/props/summoning_circle.tscn" id="10_t26fn"]
+[ext_resource type="PackedScene" uid="uid://bplqsfx6i07v4" path="res://src/props/summoning_circle.tscn" id="10_t26fn"]
 
 [node name="LevelTitle" type="Node3D"]
 
