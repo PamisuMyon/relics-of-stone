@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8mdu506ehw5p"]
+[gd_scene load_steps=5 format=3]
 
 [ext_resource type="Script" path="res://src/ui/tutorial.gd" id="1_vhbft"]
 [ext_resource type="Texture2D" uid="uid://drvo5y782xl5" path="res://assets/textures/rounded_512_20.png" id="2_44vfd"]
 [ext_resource type="FontFile" uid="uid://b00ow0mbvbjld" path="res://assets/fonts/mandrill.ttf" id="3_fbpbv"]
+[ext_resource type="Texture2D" uid="uid://bmhdjgq8dy5ea" path="res://assets/textures/bg_horizontal.png" id="4_topmh"]
 
 [node name="Tutorial" type="Control"]
 layout_mode = 3
@@ -16,7 +17,6 @@ script = ExtResource("1_vhbft")
 
 [node name="Dialog" type="NinePatchRect" parent="."]
 self_modulate = Color(0, 0, 0, 0.164706)
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -35,7 +35,6 @@ patch_margin_right = 20
 patch_margin_bottom = 20
 
 [node name="Margin" type="MarginContainer" parent="Dialog"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -48,7 +47,6 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="LabelDialog" type="RichTextLabel" parent="Dialog/Margin"]
-layout_mode = 2
 offset_left = 16.0
 offset_top = 16.0
 offset_right = 408.0
@@ -60,7 +58,6 @@ text = "These rituals require some casting materials, see the [color=#86fff1]dia
 scroll_active = false
 
 [node name="LabelNext" type="RichTextLabel" parent="Dialog"]
-layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -79,5 +76,42 @@ text = "[color=#86fff1]E[/color] next→"
 scroll_active = false
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.02
 one_shot = true
+
+[node name="Controls" type="NinePatchRect" parent="."]
+self_modulate = Color(0, 0, 0, 0.164706)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -404.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("4_topmh")
+patch_margin_left = 152
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Controls"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Controls/VBoxContainer"]
+custom_minimum_size = Vector2i(0, 28)
+offset_top = 6.0
+offset_right = 334.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("3_fbpbv")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "Move [color=#86fff1]W A S D[/color]    Use Scroll [color=#86fff1]E[/color]"
+scroll_active = false

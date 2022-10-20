@@ -1,19 +1,24 @@
-[gd_scene load_steps=8 format=3 uid="uid://rgyy3t05oddg"]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="PackedScene" uid="uid://bodrg5tuuwmcx" path="res://src/levels/level_template.tscn" id="1_yigpx"]
 [ext_resource type="PackedScene" uid="uid://48jm2seu840k" path="res://src/environment/floor_obstacle_fox.tscn" id="2_jnwl8"]
 [ext_resource type="PackedScene" uid="uid://cqqakjex5toh0" path="res://src/environment/floor.tscn" id="2_xgvx8"]
 [ext_resource type="PackedScene" uid="uid://cvnm8s1notvk3" path="res://src/environment/floor_obstacle_stag.tscn" id="2_yldty"]
-[ext_resource type="PackedScene" uid="uid://7e0akh2q7e2w" path="res://src/environment/floor_push_2.tscn" id="3_hrd4q"]
+[ext_resource type="PackedScene" path="res://src/environment/floor_push_2.tscn" id="3_hrd4q"]
 [ext_resource type="PackedScene" uid="uid://bsik5aj203u6r" path="res://src/props/crystal.tscn" id="3_ybcql"]
 [ext_resource type="PackedScene" uid="uid://b55l867boeih3" path="res://src/props/scroll.tscn" id="4_4tftf"]
+[ext_resource type="Texture2D" uid="uid://bmhdjgq8dy5ea" path="res://assets/textures/bg_horizontal.png" id="8_w2pdr"]
+[ext_resource type="FontFile" uid="uid://b00ow0mbvbjld" path="res://assets/fonts/mandrill.ttf" id="9_tberf"]
 
 [node name="Level6" instance=ExtResource("1_yigpx")]
 initial_scroll_count = 0
 target_key_count = 2
 
 [node name="Player" parent="." index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.01553, 0.46886, 7.89808)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95346, 0.46886, 5.96024)
+
+[node name="CameraController" parent="." index="4"]
+transform = Transform3D(0.707107, -0.664463, 0.241845, 0, 0.34202, 0.939692, -0.707107, -0.664463, 0.241845, 0, 0, 0)
 
 [node name="Camera3D" parent="CameraController" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 20)
@@ -179,3 +184,49 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 7)
 
 [node name="Scroll9" parent="." index="23" instance=ExtResource("4_4tftf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1, 7)
+
+[node name="Hint" type="Control" parent="." index="24"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Controls" type="NinePatchRect" parent="Hint" index="0"]
+self_modulate = Color(0, 0, 0, 0.164706)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("8_w2pdr")
+patch_margin_left = 152
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hint/Controls" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Hint/Controls/VBoxContainer" index="0"]
+custom_minimum_size = Vector2i(0, 28)
+offset_top = 6.0
+offset_right = 110.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("9_tberf")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "Zoom [color=#86fff1]Z X[/color]"
+scroll_active = false

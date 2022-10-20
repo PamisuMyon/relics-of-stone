@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0att4xrhxb8e"]
+
+[ext_resource type="FontFile" uid="uid://b00ow0mbvbjld" path="res://assets/fonts/mandrill.ttf" id="1_rhu2e"]
+
+[node name="LevelItemButton" type="Button"]
+custom_minimum_size = Vector2i(48, 0)
+offset_right = 41.0
+offset_bottom = 37.0
+theme_override_fonts/font = ExtResource("1_rhu2e")
+theme_override_font_sizes/font_size = 28
+text = "0"

@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://ckyeh1q7j8dwb"]
+[gd_scene load_steps=15 format=3 uid="uid://dxgctsew18o06"]
 
 [ext_resource type="Texture2D" uid="uid://dehxb5i1jnwy2" path="res://assets/textures/Crystal5.png" id="1_6225p"]
 [ext_resource type="FontFile" uid="uid://b00ow0mbvbjld" path="res://assets/fonts/mandrill.ttf" id="1_7605a"]
 [ext_resource type="Script" path="res://src/ui/hud.gd" id="1_yfqtj"]
 [ext_resource type="Texture2D" uid="uid://cy5touamoun4h" path="res://assets/textures/Scroll.png" id="3_ygq8p"]
+[ext_resource type="Texture2D" uid="uid://bpdn2smgkr0p8" path="res://assets/textures/menu.png" id="5_11bm6"]
 [ext_resource type="Texture2D" uid="uid://bmepo0lakkkkx" path="res://assets/textures/restart.png" id="5_xc7ng"]
+[ext_resource type="PackedScene" uid="uid://f3eau6vl4qsi" path="res://src/ui/menu_panel.tscn" id="7_rghrj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hlclp"]
 font = ExtResource("1_7605a")
@@ -185,7 +187,7 @@ grow_horizontal = 2
 text = "-"
 label_settings = SubResource("LabelSettings_0neic")
 
-[node name="ButtonRestart" type="Button" parent="."]
+[node name="ButtonMenu" type="Button" parent="."]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -193,6 +195,19 @@ offset_left = -29.0
 offset_top = 5.0
 offset_right = -5.0
 offset_bottom = 29.0
+grow_horizontal = 0
+shortcut_in_tooltip = false
+icon = ExtResource("5_11bm6")
+expand_icon = true
+
+[node name="ButtonRestart" type="Button" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -29.0
+offset_top = 35.0
+offset_right = -5.0
+offset_bottom = 59.0
 grow_horizontal = 0
 shortcut_in_tooltip = false
 icon = ExtResource("5_xc7ng")
@@ -203,4 +218,8 @@ libraries = {
 "": SubResource("AnimationLibrary_4lvyj")
 }
 
+[node name="MenuPanel" parent="." instance=ExtResource("7_rghrj")]
+self_modulate = Color(0, 0, 0, 0.196078)
+
+[connection signal="pressed" from="ButtonMenu" to="." method="_on_button_menu_pressed"]
 [connection signal="pressed" from="ButtonRestart" to="." method="_on_button_restart_pressed"]

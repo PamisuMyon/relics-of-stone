@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://7e0akh2q7e2w"]
+[gd_scene load_steps=6 format=3]
 
 [ext_resource type="PackedScene" uid="uid://cqqakjex5toh0" path="res://src/environment/floor.tscn" id="1_lv4lu"]
 [ext_resource type="Texture2D" uid="uid://bxpx078q51yet" path="res://assets/textures/arrow2.png" id="2_rq76n"]

@@ -1,0 +1,124 @@
+[gd_scene load_steps=4 format=3 uid="uid://f3eau6vl4qsi"]
+
+[ext_resource type="Texture2D" uid="uid://drvo5y782xl5" path="res://assets/textures/rounded_512_20.png" id="1_c14rb"]
+[ext_resource type="Script" path="res://src/ui/menu_panel.gd" id="2_c8weo"]
+[ext_resource type="FontFile" uid="uid://b00ow0mbvbjld" path="res://assets/fonts/mandrill.ttf" id="3_dvn4b"]
+
+[node name="MenuPanel" type="NinePatchRect"]
+self_modulate = Color(0, 0, 0, 0.196078)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -357.0
+offset_top = -202.0
+offset_right = 357.0
+offset_bottom = 202.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_c14rb")
+patch_margin_left = 20
+patch_margin_top = 20
+patch_margin_right = 20
+patch_margin_bottom = 20
+script = ExtResource("2_c8weo")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = 26.0
+offset_right = -34.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 60
+dragger_visibility = 1
+
+[node name="Menu" type="VBoxContainer" parent="HSplitContainer"]
+custom_minimum_size = Vector2i(240, 0)
+offset_right = 240.0
+offset_bottom = 352.0
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="HSplitContainer/Menu"]
+offset_right = 240.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_dvn4b")
+theme_override_font_sizes/font_size = 38
+text = "MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonResume" type="Button" parent="HSplitContainer/Menu"]
+offset_top = 52.0
+offset_right = 240.0
+offset_bottom = 89.0
+theme_override_fonts/font = ExtResource("3_dvn4b")
+theme_override_font_sizes/font_size = 28
+text = "Resume"
+
+[node name="FullScreen" type="CheckButton" parent="HSplitContainer/Menu"]
+offset_top = 99.0
+offset_right = 240.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("3_dvn4b")
+theme_override_font_sizes/font_size = 28
+text = "Full Screen"
+
+[node name="Music" type="CheckButton" parent="HSplitContainer/Menu"]
+offset_top = 146.0
+offset_right = 240.0
+offset_bottom = 183.0
+theme_override_fonts/font = ExtResource("3_dvn4b")
+theme_override_font_sizes/font_size = 28
+button_pressed = true
+text = "Music
+"
+
+[node name="Sound" type="CheckButton" parent="HSplitContainer/Menu"]
+offset_top = 193.0
+offset_right = 240.0
+offset_bottom = 230.0
+theme_override_fonts/font = ExtResource("3_dvn4b")
+theme_override_font_sizes/font_size = 28
+button_pressed = true
+text = "Sound
+"
+
+[node name="ButtonQuit" type="Button" parent="HSplitContainer/Menu"]
+offset_top = 240.0
+offset_right = 240.0
+offset_bottom = 277.0
+theme_override_fonts/font = ExtResource("3_dvn4b")
+theme_override_font_sizes/font_size = 28
+text = "Quit
+"
+
+[node name="LevelSelection" type="VBoxContainer" parent="HSplitContainer"]
+offset_left = 300.0
+offset_right = 646.0
+offset_bottom = 352.0
+theme_override_constants/separation = 10
+
+[node name="Label2" type="Label" parent="HSplitContainer/LevelSelection"]
+offset_right = 346.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_dvn4b")
+theme_override_font_sizes/font_size = 38
+text = "LEVEL SELECTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelContainer" type="HFlowContainer" parent="HSplitContainer/LevelSelection"]
+offset_top = 52.0
+offset_right = 346.0
+offset_bottom = 52.0
+
+[connection signal="pressed" from="HSplitContainer/Menu/ButtonResume" to="." method="_on_button_resume_pressed"]
+[connection signal="toggled" from="HSplitContainer/Menu/FullScreen" to="." method="_on_full_screen_toggled"]
+[connection signal="toggled" from="HSplitContainer/Menu/Music" to="." method="_on_music_toggled"]
+[connection signal="toggled" from="HSplitContainer/Menu/Sound" to="." method="_on_sound_toggled"]
+[connection signal="pressed" from="HSplitContainer/Menu/ButtonQuit" to="." method="_on_button_quit_pressed"]

@@ -15,6 +15,7 @@ func _ready():
 	level = get_parent() as LevelManager
 	level.stage_entered.connect(_on_stage_entered)
 	dialog.visible = false
+	$Controls.visible = false
 
 
 func _process(delta):
@@ -35,6 +36,7 @@ func _on_stage_entered():
 	dialog.visible = false
 	level.player.can_move = true
 	level.witch.anim.play("Pray")
+	$Controls.visible = true
 	
 
 func _anim_show_dialog_content(content: String):

@@ -2,17 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://bodrg5tuuwmcx" path="res://src/levels/level_template.tscn" id="1_j4t5d"]
 [ext_resource type="PackedScene" uid="uid://cqqakjex5toh0" path="res://src/environment/floor.tscn" id="2_0je15"]
-[ext_resource type="PackedScene" uid="uid://b8mdu506ehw5p" path="res://src/ui/tutorial.tscn" id="3_gvob5"]
+[ext_resource type="PackedScene" path="res://src/ui/tutorial.tscn" id="3_gvob5"]
 [ext_resource type="PackedScene" uid="uid://bsik5aj203u6r" path="res://src/props/crystal.tscn" id="4_446ls"]
 
 [node name="LevelTutorial" instance=ExtResource("1_j4t5d")]
 initial_scroll_count = 10
 target_key_count = 2
 
-[node name="Player" parent="." index="3"]
+[node name="Tutorial" parent="." index="2" instance=ExtResource("3_gvob5")]
+
+[node name="Player" parent="." index="4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0153749, 0.417764, -1.03053)
 
-[node name="Witch" parent="." index="5"]
+[node name="Witch" parent="." index="6"]
 transform = Transform3D(-0.939615, 0, 0.342233, 0, 1, 0, -0.342233, 0, -0.939615, 0, 0.42, 0)
 default_anim = "Idle"
 
@@ -33,8 +35,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
 
 [node name="Floor4" parent="Floors" index="5" instance=ExtResource("2_0je15")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
-
-[node name="Tutorial" parent="." index="11" instance=ExtResource("3_gvob5")]
 
 [node name="Crystal" parent="." index="12" instance=ExtResource("4_446ls")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -4)

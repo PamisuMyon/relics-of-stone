@@ -10,6 +10,7 @@ func _ready():
 	level.key_changed.connect(_on_key_changed)
 	level.scroll_changed.connect(_on_scroll_changed)
 	level.scroll_change_failed.connect(_on_scroll_change_failed)
+	$MenuPanel.visible = false
 
 
 func _on_key_changed(new_value: int, target: int):
@@ -31,3 +32,7 @@ func _on_scroll_change_failed():
 
 func _on_button_restart_pressed():
 	Global.restart()
+
+
+func _on_button_menu_pressed():
+	$MenuPanel.visible = !$MenuPanel.visible

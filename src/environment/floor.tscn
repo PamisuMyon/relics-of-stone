@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=3 uid="uid://cqqakjex5toh0"]
 
 [ext_resource type="Script" path="res://src/environment/floor.gd" id="1_dvxn4"]
-[ext_resource type="PackedScene" uid="uid://c5v33e3mtucva" path="res://assets/ruins/Floor_SquareLarge.glb" id="2_xngdg"]
+[ext_resource type="PackedScene" uid="uid://c5v33e3mtucva" path="res://assets/ruins/Floor_SquareLarge.glb" id="2_47u47"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_xcmln"]
-size = Vector3(1.98156, 0.150312, 1.98423)
+[sub_resource type="BoxShape3D" id="BoxShape3D_rf36l"]
+size = Vector3(1.982, 0.15, 1.982)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eltb2"]
 size = Vector3(0.2, 1, 0.2)
@@ -14,11 +14,11 @@ collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_dvxn4")
 
-[node name="Floor_SquareLarge2" parent="." instance=ExtResource("2_xngdg")]
+[node name="Floor_SquareLarge" parent="." instance=ExtResource("2_47u47")]
 
-[node name="Box" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0447708, 0)
-shape = SubResource("BoxShape3D_xcmln")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.045, 0)
+shape = SubResource("BoxShape3D_rf36l")
 
 [node name="ShapeCastLeft" type="ShapeCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)

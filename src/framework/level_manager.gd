@@ -42,17 +42,17 @@ func enter_stage():
 	
 	var player_pos = player.global_position
 	var player_target_pos = player_pos
-	player_pos.y = 20
+	player_pos.y = 25
 	player.global_position = player_pos
 	player.can_move = false
 	camera_controller.tracking = false
-	tween.tween_property(player, "global_position", player_target_pos, 1)
+	tween.tween_property(player, "global_position", player_target_pos, 1.2)
 	
 	var witch_pos = witch.global_position
 	var witch_target_pos = witch_pos
-	witch_pos.y = 20
+	witch_pos.y = 25
 	witch.global_position = witch_pos
-	tween.tween_property(witch, "global_position", witch_target_pos, 1)
+	tween.tween_property(witch, "global_position", witch_target_pos, 1.2)
 	
 	await tween.finished
 	player.can_move = true
@@ -71,14 +71,14 @@ func exit_stage():
 	tween.set_parallel(true)
 	
 	var player_target_pos = player.global_position
-	player_target_pos.y = 20
+	player_target_pos.y = 40
 	player.can_move = false
 	camera_controller.tracking = false
-	tween.tween_property(player, "global_position", player_target_pos, 1)
+	tween.tween_property(player, "global_position", player_target_pos, 1.2)
 	
 	var witch_target_pos = witch.global_position
-	witch_target_pos.y = 20
-	tween.tween_property(witch, "global_position", witch_target_pos, 1)
+	witch_target_pos.y = 40
+	tween.tween_property(witch, "global_position", witch_target_pos, 1.2)
 	
 	await tween.finished
 	Global.next_level()
