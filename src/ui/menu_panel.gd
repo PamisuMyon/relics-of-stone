@@ -10,7 +10,11 @@ func _ready():
 		if Global.current == i:
 			button.disabled = true
 		button.pressed.connect(_on_level_button_pressed.bind(i))
-
+	
+	$HSplitContainer/Menu/Music.button_pressed = not AudioServer.is_bus_mute(AudioServer.get_bus_index("Music"))
+	$HSplitContainer/Menu/Sound.button_pressed = not AudioServer.is_bus_mute(AudioServer.get_bus_index("Sound"))
+	$HSplitContainer/Menu/FullScreen.button_pressed =  DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
+	
 
 func _on_level_button_pressed(index: int):
 	Global.select_level(index)

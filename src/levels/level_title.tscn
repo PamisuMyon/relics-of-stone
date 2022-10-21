@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=10 format=3 uid="uid://db15r6rhehv7o"]
 
 [ext_resource type="Environment" uid="uid://7llcpbx14r1" path="res://src/environment/environment.tres" id="1_7r1an"]
 [ext_resource type="Script" path="res://src/framework/node_rotator_3d.gd" id="3_hdmeo"]
@@ -51,7 +51,6 @@ grow_vertical = 2
 script = ExtResource("6_3dqld")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TitleUI"]
-layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -66,7 +65,6 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 
 [node name="StartButton" type="Button" parent="TitleUI/VBoxContainer"]
-layout_mode = 2
 offset_right = 158.0
 offset_bottom = 37.0
 grow_horizontal = 2
@@ -76,7 +74,6 @@ theme_override_font_sizes/font_size = 28
 text = "Start"
 
 [node name="ButtonMenu" type="Button" parent="TitleUI"]
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -90,7 +87,6 @@ icon = ExtResource("7_8csyi")
 expand_icon = true
 
 [node name="MenuPanel" parent="TitleUI" instance=ExtResource("9_onrh2")]
-layout_mode = 1
 
 [connection signal="pressed" from="TitleUI/VBoxContainer/StartButton" to="TitleUI" method="_on_start_button_pressed"]
 [connection signal="pressed" from="TitleUI/ButtonMenu" to="TitleUI" method="_on_button_menu_pressed"]

@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://frbyccig0rgp"]
+
+[ext_resource type="Shader" path="res://assets/props/s_bones.gdshader" id="1_ho6by"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ho6by")
+shader_parameter/base_color = Color(0.588235, 0.556863, 0.47451, 1)
+shader_parameter/edge_color = Color(1, 0.866667, 0.101961, 1)

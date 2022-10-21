@@ -5,7 +5,7 @@ class_name CameraController3D
 @export var zoom_range := Vector2(15, 35)
 @export var zoom_speed := .5
 @export var drag_threshold_squared := 100
-@export var drag_speed := 42
+@export var drag_speed := 50
 
 var tracking := true
 var dragging := false

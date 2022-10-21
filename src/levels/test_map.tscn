@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b7yinyokimmcv"]
+[gd_scene load_steps=26 format=3 uid="uid://b7yinyokimmcv"]
 
 [ext_resource type="Script" path="res://src/framework/level_manager.gd" id="1_8i1b0"]
 [ext_resource type="PackedScene" uid="uid://xpqtxq64qavp" path="res://src/characters/player.tscn" id="2_pt22t"]
@@ -16,8 +16,12 @@
 [ext_resource type="PackedScene" uid="uid://78um3kdvgc2m" path="res://src/environment/floor_push_2.tscn" id="12_3jwcb"]
 [ext_resource type="PackedScene" uid="uid://y2k6i8ogenm4" path="res://src/environment/floor_teleport_target.tscn" id="12_tl5vx"]
 [ext_resource type="PackedScene" uid="uid://xefiqbh0ctad" path="res://src/environment/floor_teleport.tscn" id="12_w00ok"]
+[ext_resource type="PackedScene" uid="uid://b6s1g2y7fhu03" path="res://src/environment/floor_teleport_2.tscn" id="14_2ot6g"]
 [ext_resource type="PackedScene" uid="uid://7yrqg4suu65c" path="res://src/environment/death_wall.tscn" id="14_6u17k"]
+[ext_resource type="PackedScene" uid="uid://dsavhsbxlaedl" path="res://src/environment/floor_teleport_target_2.tscn" id="15_lm2e1"]
 [ext_resource type="PackedScene" uid="uid://48jm2seu840k" path="res://src/environment/floor_obstacle_fox.tscn" id="15_q4khi"]
+[ext_resource type="PackedScene" uid="uid://bnfyt82ynflxd" path="res://src/props/bone_2.tscn" id="21_37m1g"]
+[ext_resource type="PackedScene" uid="uid://dxscvyjt5jpdb" path="res://src/props/bone_3.tscn" id="22_ja2sk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5skj"]
 
@@ -61,6 +65,7 @@ size = 10.0
 
 [node name="Background" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -64, 0)
+visible = false
 mesh = SubResource("QuadMesh_s3n7w")
 
 [node name="Floors" type="Node3D" parent="."]
@@ -70,6 +75,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
 
 [node name="Floor4" parent="Floors" instance=ExtResource("4_cujhq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 3)
+
+[node name="Floor6" parent="Floors" instance=ExtResource("4_cujhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 11)
+
+[node name="Floor7" parent="Floors" instance=ExtResource("4_cujhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 11)
+
+[node name="Floor8" parent="Floors" instance=ExtResource("4_cujhq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 11)
 
 [node name="Floor5" parent="Floors" instance=ExtResource("4_cujhq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -7)
@@ -102,6 +116,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
 teleport_target = NodePath("../FloorTeleportTarget")
 
+[node name="FloorTeleport2" parent="Floors" node_paths=PackedStringArray("teleport_target") instance=ExtResource("14_2ot6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -7)
+teleport_target = NodePath("../FloorTeleportTarget2")
+
+[node name="FloorTeleportTarget2" parent="Floors" instance=ExtResource("15_lm2e1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 11)
+
 [node name="Column" parent="." instance=ExtResource("3_3hstp")]
 collision_layer = 4
 collision_mask = 0
@@ -127,3 +148,12 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0
 
 [node name="DeathWall" parent="." instance=ExtResource("14_6u17k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6, 0)
+
+[node name="Crystal2" parent="." instance=ExtResource("6_xji28")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1, 11)
+
+[node name="Bone2" parent="." instance=ExtResource("21_37m1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 11)
+
+[node name="Bone3" parent="." instance=ExtResource("22_ja2sk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 11)

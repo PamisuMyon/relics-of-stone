@@ -56,7 +56,7 @@ func _anim_show_dialog_content(content: String):
 
 # hard-code
 var dialog_contents = [
-	"Hi traveler, are you also trapped in this amazing place? If you can help me with some magical rituals, maybe we can get out of here.",
-	"These rituals require some casting materials, see the diamonds over there, I need you to help me collect them.",
+	"Hi traveler, are you also trapped in this strange place? If you can help me with some magical rituals, maybe we can get out of here.",
+	"These rituals require some casting materials, see the bones over there, I need you to help me collect them.",
 	"Here are some scrolls that can summon stone platforms, press the E key on the edge of the platform to use."
 ]

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bdwc0iybnrqnl"
-path="res://.godot/imported/FishBone.glb-79c6c94643f253abac6bebf8eb9d6c70.scn"
+uid="uid://bxte6552y2wt4"
+path="res://.godot/imported/Column.glb-63b84b8f163c1b7d02f33c9b009ac02f.scn"
 
 [deps]
 
-source_file="res://assets/props/FishBone.glb"
-dest_files=["res://.godot/imported/FishBone.glb-79c6c94643f253abac6bebf8eb9d6c70.scn"]
+source_file="res://assets/ruins/Column.glb"
+dest_files=["res://.godot/imported/Column.glb-63b84b8f163c1b7d02f33c9b009ac02f.scn"]
 
 [params]
 
@@ -28,9 +28,13 @@ animation/fps=30
 import_script/path=""
 _subresources={
 "materials": {
-"Beige": {
+"DarkGrey_Floor": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/props/mat_bones.tres"
+"use_external/path": "res://assets/ruins/mat_floor_dark.tres"
+},
+"Grey_Floor": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/ruins/mat_floor.tres"
 }
 }
 }

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://wnjrib6u2rbl"
-path="res://.godot/imported/Potion4_Empty.glb-5818aa06a393466c31e09e2a1ee0deb3.scn"
+uid="uid://clx2ib5vf274s"
+path="res://.godot/imported/Candles_2.glb-32ca4e02e6ffa58d9988772d2e1f0063.scn"
 
 [deps]
 
-source_file="res://assets/props/Potion4_Empty.glb"
-dest_files=["res://.godot/imported/Potion4_Empty.glb-5818aa06a393466c31e09e2a1ee0deb3.scn"]
+source_file="res://assets/props/Candles_2.glb"
+dest_files=["res://.godot/imported/Candles_2.glb-32ca4e02e6ffa58d9988772d2e1f0063.scn"]
 
 [params]
 

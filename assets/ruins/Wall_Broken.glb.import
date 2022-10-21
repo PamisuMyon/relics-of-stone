@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bdwc0iybnrqnl"
-path="res://.godot/imported/FishBone.glb-79c6c94643f253abac6bebf8eb9d6c70.scn"
+uid="uid://bo6y4co83k68f"
+path="res://.godot/imported/Wall_Broken.glb-c129058c27b4631e9092f0a1f311c363.scn"
 
 [deps]
 
-source_file="res://assets/props/FishBone.glb"
-dest_files=["res://.godot/imported/FishBone.glb-79c6c94643f253abac6bebf8eb9d6c70.scn"]
+source_file="res://assets/ruins/Wall_Broken.glb"
+dest_files=["res://.godot/imported/Wall_Broken.glb-c129058c27b4631e9092f0a1f311c363.scn"]
 
 [params]
 
@@ -28,9 +28,13 @@ animation/fps=30
 import_script/path=""
 _subresources={
 "materials": {
-"Beige": {
+"Highlights": {
 "use_external/enabled": true,
-"use_external/path": "res://assets/props/mat_bones.tres"
+"use_external/path": "res://assets/ruins/mat_floor.tres"
+},
+"Main": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/ruins/mat_floor.tres"
 }
 }
 }

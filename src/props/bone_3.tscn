@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxscvyjt5jpdb"]
+
+[ext_resource type="PackedScene" uid="uid://bq14180xnxp8r" path="res://src/props/item.tscn" id="1_r3t4t"]
+[ext_resource type="PackedScene" uid="uid://caor0lxw4xypk" path="res://assets/props/FishBone.glb" id="2_fml58"]
+[ext_resource type="AudioStream" uid="uid://cbhalwbkmmvlj" path="res://assets/audio/Rise02.ogg" id="2_m2ssj"]
+
+[node name="Bone3" instance=ExtResource("1_r3t4t")]
+
+[node name="PickUp" parent="." index="1"]
+streams = [ExtResource("2_m2ssj")]
+
+[node name="FishBone" parent="." index="2" instance=ExtResource("2_fml58")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)

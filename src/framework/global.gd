@@ -15,6 +15,7 @@ var levels := [
 ]
 
 var level_title = "res://src/levels/level_title.tscn"
+var level_end = "res://src/levels/level_end.tscn"
 
 var current := -1
 
@@ -29,8 +30,11 @@ func restart():
 
 func next_level():
 	current += 1
-	current %= levels.size()
-	get_tree().change_scene_to_file(levels[current])
+	if current >= levels.size():
+		current = -1
+		get_tree().change_scene_to_file(level_end)
+	else:
+		get_tree().change_scene_to_file(levels[current])
 
 
 func select_level(index: int):

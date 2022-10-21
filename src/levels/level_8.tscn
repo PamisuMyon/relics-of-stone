@@ -1,13 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://dsuqkxa75maca"]
+[gd_scene load_steps=15 format=3 uid="uid://dsuqkxa75maca"]
 
 [ext_resource type="PackedScene" uid="uid://bodrg5tuuwmcx" path="res://src/levels/level_template.tscn" id="1_6jqvb"]
+[ext_resource type="PackedScene" uid="uid://cmdvh7ciqsskn" path="res://assets/props/Candles_1.glb" id="2_k2pws"]
 [ext_resource type="PackedScene" uid="uid://cvnm8s1notvk3" path="res://src/environment/floor_obstacle_stag.tscn" id="2_ps2ms"]
+[ext_resource type="PackedScene" uid="uid://c2s24ya43djv5" path="res://assets/props/Candles_3.glb" id="3_5p2ja"]
 [ext_resource type="PackedScene" uid="uid://cqqakjex5toh0" path="res://src/environment/floor.tscn" id="3_aerlx"]
-[ext_resource type="PackedScene" uid="uid://7e0akh2q7e2w" path="res://src/environment/floor_push_2.tscn" id="4_8snlx"]
+[ext_resource type="PackedScene" uid="uid://78um3kdvgc2m" path="res://src/environment/floor_push_2.tscn" id="4_8snlx"]
+[ext_resource type="PackedScene" uid="uid://vpil7rhwurlf" path="res://assets/ruins/Bricks.glb" id="4_16ewc"]
 [ext_resource type="PackedScene" uid="uid://bsik5aj203u6r" path="res://src/props/crystal.tscn" id="5_35v4e"]
+[ext_resource type="PackedScene" uid="uid://nabr8vknkcsi" path="res://assets/ruins/Brick.glb" id="5_i76xo"]
 [ext_resource type="PackedScene" uid="uid://b55l867boeih3" path="res://src/props/scroll.tscn" id="6_ate0g"]
+[ext_resource type="PackedScene" uid="uid://bxte6552y2wt4" path="res://assets/ruins/Column.glb" id="6_b4kpl"]
+[ext_resource type="PackedScene" uid="uid://4h3vmtwmoks4" path="res://assets/ruins/Wall_Double_Broken.glb" id="7_jh3r0"]
+[ext_resource type="PackedScene" uid="uid://bnfyt82ynflxd" path="res://src/props/bone_2.tscn" id="11_xkvk7"]
+[ext_resource type="PackedScene" uid="uid://dxscvyjt5jpdb" path="res://src/props/bone_3.tscn" id="12_os8uq"]
 
-[node name="Level8" instance=ExtResource("1_6jqvb")]
+[node name="Level9" instance=ExtResource("1_6jqvb")]
 initial_scroll_count = 3
 target_key_count = 3
 
@@ -19,6 +27,35 @@ transform = Transform3D(0.707107, -0.664463, 0.241845, 0, 0.34202, 0.939692, -0.
 
 [node name="Camera3D" parent="CameraController" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 22)
+
+[node name="Decoration" type="Node3D" parent="." index="10"]
+
+[node name="Candles_1" parent="Decoration" index="0" instance=ExtResource("2_k2pws")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51591, 0, 0.25851)
+
+[node name="Candles_3" parent="Decoration" index="1" instance=ExtResource("3_5p2ja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.277517, 0, 1.4737)
+
+[node name="Candles_4" parent="Decoration" index="2" instance=ExtResource("3_5p2ja")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.756377, 0, -1.07064)
+
+[node name="Bricks" parent="Decoration" index="3" instance=ExtResource("4_16ewc")]
+transform = Transform3D(0.608552, -0.34238, -0.71585, 0.778425, 0.0824873, 0.622295, -0.154012, -0.935934, 0.316714, -11.7423, -17, 7.3328)
+
+[node name="Brick" parent="Decoration" index="4" instance=ExtResource("5_i76xo")]
+transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, -15.438, -16, 0.931)
+
+[node name="Column" parent="Decoration" index="5" instance=ExtResource("6_b4kpl")]
+transform = Transform3D(-0.255639, -0.675651, -0.69148, 0.614243, 0.438815, -0.655855, 0.746561, -0.592399, 0.302836, -29.601, -28, -0.983)
+
+[node name="Column2" parent="Decoration" index="6" instance=ExtResource("6_b4kpl")]
+transform = Transform3D(-0.493754, -0.576633, -0.650923, -0.855003, 0.458491, 0.242394, 0.158669, 0.676225, -0.719405, -13.601, -33, -16.983)
+
+[node name="Brick2" parent="Decoration" index="7" instance=ExtResource("5_i76xo")]
+transform = Transform3D(-0.374913, -0.398005, -0.837277, 0.259835, 0.82184, -0.507015, 0.889902, -0.40764, -0.204703, -12.7653, -19, -20.2636)
+
+[node name="Wall_Double_Broken" parent="Decoration" index="8" instance=ExtResource("7_jh3r0")]
+transform = Transform3D(-0.978914, -0.0318463, -0.201775, -0.0944532, 0.946403, 0.308867, 0.181125, 0.321413, -0.929455, -31.239, -23, 3.121)
 
 [node name="FloorObstacleStag" parent="Floors" index="0" instance=ExtResource("2_ps2ms")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9, 0, -6)
@@ -80,26 +117,26 @@ transform = Transform3D(3.0598e-07, 0, -1, 0, 1, 0, 1, 0, 3.0598e-07, -19, 0, 2)
 [node name="FloorPush4" parent="Floors" index="19" instance=ExtResource("4_8snlx")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -9, 0, -4)
 
-[node name="Crystal7" parent="." index="11" instance=ExtResource("5_35v4e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1, -2.49368)
+[node name="Bone5" parent="." index="12" instance=ExtResource("11_xkvk7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1, -2.55921)
 
-[node name="Crystal5" parent="." index="12" instance=ExtResource("5_35v4e")]
+[node name="Bone3" parent="." index="13" instance=ExtResource("12_os8uq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 6)
 
-[node name="Crystal6" parent="." index="13" instance=ExtResource("5_35v4e")]
+[node name="Crystal6" parent="." index="14" instance=ExtResource("5_35v4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, 12)
 
-[node name="Scroll" parent="." index="14" instance=ExtResource("6_ate0g")]
+[node name="Scroll" parent="." index="15" instance=ExtResource("6_ate0g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 1.43903)
 
-[node name="Scroll5" parent="." index="15" instance=ExtResource("6_ate0g")]
+[node name="Scroll5" parent="." index="16" instance=ExtResource("6_ate0g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 1, -1.32517)
 
-[node name="Scroll3" parent="." index="16" instance=ExtResource("6_ate0g")]
+[node name="Scroll3" parent="." index="17" instance=ExtResource("6_ate0g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, -8)
 
-[node name="Scroll4" parent="." index="17" instance=ExtResource("6_ate0g")]
+[node name="Scroll4" parent="." index="18" instance=ExtResource("6_ate0g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -8)
 
-[node name="Scroll2" parent="." index="18" instance=ExtResource("6_ate0g")]
+[node name="Scroll2" parent="." index="19" instance=ExtResource("6_ate0g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 2.44287)

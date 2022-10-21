@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dw8o4uxgm8h2d"
+uid="uid://cxkn68ajb8f13"
 path="res://.godot/imported/Skull.glb-7867ba9789c911cbde83f244869d97fb.scn"
 
 [deps]
@@ -26,4 +26,11 @@ skins/use_named_skins=true
 animation/import=true
 animation/fps=30
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"Bone": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/props/mat_bones.tres"
+}
+}
+}

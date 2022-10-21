@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bdwc0iybnrqnl"
-path="res://.godot/imported/FishBone.glb-79c6c94643f253abac6bebf8eb9d6c70.scn"
+uid="uid://c2s24ya43djv5"
+path="res://.godot/imported/Candles_3.glb-800b8e76b0e9aebd2b8a9fb70bb6c6b7.scn"
 
 [deps]
 
-source_file="res://assets/props/FishBone.glb"
-dest_files=["res://.godot/imported/FishBone.glb-79c6c94643f253abac6bebf8eb9d6c70.scn"]
+source_file="res://assets/props/Candles_3.glb"
+dest_files=["res://.godot/imported/Candles_3.glb-800b8e76b0e9aebd2b8a9fb70bb6c6b7.scn"]
 
 [params]
 
@@ -26,11 +26,4 @@ skins/use_named_skins=true
 animation/import=true
 animation/fps=30
 import_script/path=""
-_subresources={
-"materials": {
-"Beige": {
-"use_external/enabled": true,
-"use_external/path": "res://assets/props/mat_bones.tres"
-}
-}
-}
+_subresources={}
