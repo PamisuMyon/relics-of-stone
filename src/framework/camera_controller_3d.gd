@@ -14,9 +14,14 @@ var dragging := false
 
 func _ready():
 	global_position = target.global_position
-
+	_change_view(Global.viewing_front)
 
 func _process(delta):
+	if Input.is_action_just_pressed("change_view"):
+		Global.viewing_front = !Global.viewing_front
+		_change_view(Global.viewing_front)
+		
+	
 	if not tracking:
 		return
 	
@@ -42,3 +47,16 @@ func _process(delta):
 		pos.z += zoom_distance
 		pos.z = clampf(pos.z, zoom_range.x, zoom_range.y)
 		camera.position = pos
+
+
+func _change_view(front: bool):
+	var rot = rotation
+	var player = $"../Player"
+	if front:
+		rot.y = 0
+		player.move_basis = Basis(Vector3.UP, 0)
+	else:
+		rot.y = deg_to_rad(45)
+		player.move_basis = Basis(Vector3.UP, deg_to_rad(45))
+	rotation = rot
+	

@@ -25,16 +25,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.984466, 0.46886, -1.10192)
 [node name="Decoration" type="Node3D" parent="." index="10"]
 
 [node name="Candles_1" parent="Decoration" index="0" instance=ExtResource("2_gmlpt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.672511, 0, -0.716698)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50852, 0, -1.15482)
 
 [node name="Candles_3" parent="Decoration" index="1" instance=ExtResource("3_0ey1g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14795, 0, 0.654026)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.22414, 0, -0.317467)
 
 [node name="Candles_2" parent="Decoration" index="2" instance=ExtResource("3_t1yv3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.980782, -9.53674e-07, -0.909444)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.01888, -9.53674e-07, -0.452271)
 
 [node name="Candles_4" parent="Decoration" index="3" instance=ExtResource("5_eghyg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.822335, 0, 1.29224)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15924, 0, 0.514766)
 
 [node name="Bricks" parent="Decoration" index="4" instance=ExtResource("4_5iyu7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -22, 3)

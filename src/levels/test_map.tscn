@@ -23,10 +23,10 @@
 [ext_resource type="PackedScene" uid="uid://bnfyt82ynflxd" path="res://src/props/bone_2.tscn" id="21_37m1g"]
 [ext_resource type="PackedScene" uid="uid://dxscvyjt5jpdb" path="res://src/props/bone_3.tscn" id="22_ja2sk"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5skj"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45yb8"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_s3n7w"]
-material = SubResource("StandardMaterial3D_j5skj")
+material = SubResource("StandardMaterial3D_45yb8")
 size = Vector2(10000, 10000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k0x70"]
@@ -58,7 +58,7 @@ script = ExtResource("3_l6avm")
 target = NodePath("../Player")
 
 [node name="Camera3D" type="Camera3D" parent="CameraController"]
-transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 15)
+transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 35)
 current = true
 fov = 45.0
 size = 10.0

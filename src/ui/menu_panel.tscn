@@ -25,7 +25,6 @@ patch_margin_bottom = 20
 script = ExtResource("2_c8weo")
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -40,13 +39,11 @@ dragger_visibility = 1
 
 [node name="Menu" type="VBoxContainer" parent="HSplitContainer"]
 custom_minimum_size = Vector2i(240, 0)
-layout_mode = 2
 offset_right = 240.0
 offset_bottom = 352.0
 theme_override_constants/separation = 10
 
 [node name="Label" type="Label" parent="HSplitContainer/Menu"]
-layout_mode = 2
 offset_right = 240.0
 offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("3_dvn4b")
@@ -56,7 +53,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ButtonResume" type="Button" parent="HSplitContainer/Menu"]
-layout_mode = 2
 offset_top = 52.0
 offset_right = 240.0
 offset_bottom = 89.0
@@ -65,7 +61,6 @@ theme_override_font_sizes/font_size = 28
 text = "Resume"
 
 [node name="FullScreen" type="CheckButton" parent="HSplitContainer/Menu"]
-layout_mode = 2
 offset_top = 99.0
 offset_right = 240.0
 offset_bottom = 136.0
@@ -74,7 +69,6 @@ theme_override_font_sizes/font_size = 28
 text = "Full Screen"
 
 [node name="Music" type="CheckButton" parent="HSplitContainer/Menu"]
-layout_mode = 2
 offset_top = 146.0
 offset_right = 240.0
 offset_bottom = 183.0
@@ -85,7 +79,6 @@ text = "Music
 "
 
 [node name="Sound" type="CheckButton" parent="HSplitContainer/Menu"]
-layout_mode = 2
 offset_top = 193.0
 offset_right = 240.0
 offset_bottom = 230.0
@@ -96,7 +89,6 @@ text = "Sound
 "
 
 [node name="ButtonQuit" type="Button" parent="HSplitContainer/Menu"]
-layout_mode = 2
 offset_top = 240.0
 offset_right = 240.0
 offset_bottom = 277.0
@@ -106,14 +98,12 @@ text = "Quit
 "
 
 [node name="LevelSelection" type="VBoxContainer" parent="HSplitContainer"]
-layout_mode = 2
 offset_left = 300.0
 offset_right = 646.0
 offset_bottom = 352.0
 theme_override_constants/separation = 10
 
 [node name="Label2" type="Label" parent="HSplitContainer/LevelSelection"]
-layout_mode = 2
 offset_right = 346.0
 offset_bottom = 42.0
 theme_override_fonts/font = ExtResource("3_dvn4b")
@@ -123,7 +113,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="LevelContainer" type="HFlowContainer" parent="HSplitContainer/LevelSelection"]
-layout_mode = 2
 offset_top = 52.0
 offset_right = 346.0
 offset_bottom = 52.0

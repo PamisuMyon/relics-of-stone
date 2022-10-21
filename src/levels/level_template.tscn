@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bodrg5tuuwmcx"]
+[gd_scene load_steps=13 format=3 uid="uid://bodrg5tuuwmcx"]
 
 [ext_resource type="Script" path="res://src/framework/level_manager.gd" id="1_0la1v"]
 [ext_resource type="Environment" uid="uid://7llcpbx14r1" path="res://src/environment/environment.tres" id="1_7r1an"]
@@ -9,6 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://mfwk4y6ysj76" path="res://src/environment/column.tscn" id="7_ehvhh"]
 [ext_resource type="PackedScene" uid="uid://7yrqg4suu65c" path="res://src/environment/death_wall.tscn" id="9_gmpft"]
 [ext_resource type="PackedScene" uid="uid://bplqsfx6i07v4" path="res://src/props/summoning_circle.tscn" id="10_t26fn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5skj"]
+disable_receive_shadows = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_26qqr"]
+material = SubResource("StandardMaterial3D_j5skj")
+size = Vector2(10000, 10000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eaa4v"]
 size = Vector3(80, 1, 80)
@@ -48,6 +55,10 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0
 [node name="Column" parent="." instance=ExtResource("7_ehvhh")]
 collision_layer = 4
 collision_mask = 0
+
+[node name="Background" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -64, 0)
+mesh = SubResource("QuadMesh_26qqr")
 
 [node name="PlaceableArea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0)

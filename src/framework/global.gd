@@ -4,7 +4,6 @@ var levels := [
 	"res://src/levels/level_tutorial.tscn",
 	"res://src/levels/level_1.tscn",
 	"res://src/levels/level_2.tscn",
-	"res://src/levels/level_3.tscn",
 	"res://src/levels/level_4.tscn",
 	"res://src/levels/level_5.tscn",
 	"res://src/levels/level_6.tscn",
@@ -12,12 +11,18 @@ var levels := [
 	"res://src/levels/level_8.tscn",
 	"res://src/levels/level_9.tscn",
 	"res://src/levels/level_10.tscn",
+	"res://src/levels/level_11.tscn",
+	"res://src/levels/level_12.tscn",
+	"res://src/levels/level_13.tscn",
+	"res://src/levels/level_14.tscn",
+	"res://src/levels/level_15.tscn",
 ]
 
 var level_title = "res://src/levels/level_title.tscn"
 var level_end = "res://src/levels/level_end.tscn"
 
 var current := -1
+var viewing_front := false
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("restart"):

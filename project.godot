@@ -59,7 +59,10 @@ _global_script_class_icons={
 config/name="GWJ50"
 run/main_scene="res://src/levels/level_title.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
+boot_splash/image="res://assets/textures/gwj.png"
+boot_splash/bg_color=Color(0.0784314, 0.133333, 0.25098, 1)
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=1200
 
 [autoload]
 
@@ -70,6 +73,8 @@ Music="res://src/framework/music.tscn"
 
 window/size/viewport_width=1024
 window/size/viewport_height=640
+window/size/window_width_override=1280
+window/size/window_height_override=800
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -119,6 +124,11 @@ zoom_in={
 "deadzone": 0.5,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":4,"pressed":false,"double_click":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":90,"unicode":0,"echo":false,"script":null)
+]
+}
+change_view={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"unicode":0,"echo":false,"script":null)
 ]
 }
 

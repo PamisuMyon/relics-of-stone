@@ -11,10 +11,10 @@ func _ready():
 			button.disabled = true
 		button.pressed.connect(_on_level_button_pressed.bind(i))
 	
-	$HSplitContainer/Menu/Music.button_pressed = not AudioServer.is_bus_mute(AudioServer.get_bus_index("Music"))
-	$HSplitContainer/Menu/Sound.button_pressed = not AudioServer.is_bus_mute(AudioServer.get_bus_index("Sound"))
-	$HSplitContainer/Menu/FullScreen.button_pressed =  DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN
-	
+	$HSplitContainer/Menu/Music.set_pressed_no_signal(not AudioServer.is_bus_mute(AudioServer.get_bus_index("Music")))
+	$HSplitContainer/Menu/Sound.set_pressed_no_signal(not AudioServer.is_bus_mute(AudioServer.get_bus_index("Sound")))
+	$HSplitContainer/Menu/FullScreen.set_pressed_no_signal(DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN)
+
 
 func _on_level_button_pressed(index: int):
 	Global.select_level(index)
@@ -29,6 +29,7 @@ func _on_button_quit_pressed():
 
 
 func _on_full_screen_toggled(button_pressed):
+	DisplayServer
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_FULLSCREEN:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	else:
