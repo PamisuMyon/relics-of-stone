@@ -1,17 +1,16 @@
 extends StaticBody3D
 class_name Floor
 
-enum Type { NORMAL, PUSH }
+enum Type { NORMAL, PUSH, TELEPORT }
 
 @export var type: Type = Type.NORMAL
 @export var push_distance := 0
+@export var teleport_target: Node3D
 
 @onready var shape_cast_left: ShapeCast3D = $ShapeCastLeft
 @onready var shape_cast_right: ShapeCast3D = $ShapeCastRight
 @onready var shape_cast_forward: ShapeCast3D = $ShapeCastForward
 @onready var shape_cast_backward: ShapeCast3D = $ShapeCastBackward
-
-var tween: Tween
 
 
 func get_placeable_floor_position(player_pos: Vector3) -> Dictionary:
@@ -51,10 +50,9 @@ func get_placeable_floor_position(player_pos: Vector3) -> Dictionary:
 
 
 func animate_spawn(pos: Vector3, callback: Callable):
-	if not tween:
-		tween = create_tween()
-		tween.set_trans(Tween.TRANS_CUBIC)
-		tween.set_ease(Tween.EASE_OUT)
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_CUBIC)
+	tween.set_ease(Tween.EASE_OUT)
 	var final_pos = pos
 	pos.y = -26
 	global_position = pos
@@ -63,9 +61,16 @@ func animate_spawn(pos: Vector3, callback: Callable):
 	$MoveSound.play_random()
 
 
-func _on_push_area_body_entered(body: Node3D):
+func _on_effect_area_body_entered(body: Node3D):
 	if body.get_meta("type") == "player":
 		var player = body # as Player
-		var target_pos = global_position + -transform.basis.z * push_distance
-		player.pushed(target_pos)
-		$PushSound.play_random()
+		if type == Type.PUSH:
+			var target_pos = global_position + -transform.basis.z * push_distance
+			player.pushed(target_pos)
+			$PushSound.play_random()
+		elif type == Type.TELEPORT:
+			assert(teleport_target, "no teleport target")
+			var target_pos = teleport_target.global_position
+			target_pos.y = player.global_position.y
+			player.global_position = target_pos
+			$PushSound.play_random()

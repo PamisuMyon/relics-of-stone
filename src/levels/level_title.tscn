@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cqdilyibfw5yv"]
+[gd_scene load_steps=10 format=3]
 
 [ext_resource type="Environment" uid="uid://7llcpbx14r1" path="res://src/environment/environment.tres" id="1_7r1an"]
-[ext_resource type="Script" path="res://src/framework/camera_rotator.gd" id="3_hdmeo"]
+[ext_resource type="Script" path="res://src/framework/node_rotator_3d.gd" id="3_hdmeo"]
 [ext_resource type="PackedScene" uid="uid://dt4c8hqxpdjv8" path="res://src/characters/witch.tscn" id="4_wtugw"]
 [ext_resource type="Script" path="res://src/ui/title_ui.gd" id="6_3dqld"]
 [ext_resource type="FontFile" uid="uid://b00ow0mbvbjld" path="res://assets/fonts/mandrill.ttf" id="6_grv8a"]

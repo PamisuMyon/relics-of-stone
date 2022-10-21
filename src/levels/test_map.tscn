@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b7yinyokimmcv"]
+[gd_scene load_steps=22 format=3 uid="uid://b7yinyokimmcv"]
 
 [ext_resource type="Script" path="res://src/framework/level_manager.gd" id="1_8i1b0"]
 [ext_resource type="PackedScene" uid="uid://xpqtxq64qavp" path="res://src/characters/player.tscn" id="2_pt22t"]
@@ -8,14 +8,22 @@
 [ext_resource type="PackedScene" uid="uid://cqqakjex5toh0" path="res://src/environment/floor.tscn" id="4_cujhq"]
 [ext_resource type="PackedScene" uid="uid://dt4c8hqxpdjv8" path="res://src/characters/witch.tscn" id="5_fwtn8"]
 [ext_resource type="PackedScene" uid="uid://bsik5aj203u6r" path="res://src/props/crystal.tscn" id="6_xji28"]
-[ext_resource type="PackedScene" uid="uid://ckyeh1q7j8dwb" path="res://src/ui/hud.tscn" id="7_5kwy0"]
-[ext_resource type="PackedScene" uid="uid://d1poag1pt2t5a" path="res://src/environment/floor_push_3.tscn" id="9_e06j2"]
+[ext_resource type="PackedScene" uid="uid://dxgctsew18o06" path="res://src/ui/hud.tscn" id="7_5kwy0"]
+[ext_resource type="PackedScene" path="res://src/environment/floor_push_3.tscn" id="9_e06j2"]
 [ext_resource type="PackedScene" uid="uid://b55l867boeih3" path="res://src/props/scroll.tscn" id="10_1b8se"]
-[ext_resource type="PackedScene" uid="uid://c18xf0itmmau" path="res://src/environment/floor_obstacle_stag.tscn" id="11_1a12s"]
-[ext_resource type="PackedScene" uid="uid://ctwecx4ktusxe" path="res://src/props/summoning_circle.tscn" id="11_fakg0"]
-[ext_resource type="PackedScene" uid="uid://7e0akh2q7e2w" path="res://src/environment/floor_push_2.tscn" id="12_3jwcb"]
+[ext_resource type="PackedScene" uid="uid://cvnm8s1notvk3" path="res://src/environment/floor_obstacle_stag.tscn" id="11_1a12s"]
+[ext_resource type="PackedScene" uid="uid://bplqsfx6i07v4" path="res://src/props/summoning_circle.tscn" id="11_fakg0"]
+[ext_resource type="PackedScene" uid="uid://78um3kdvgc2m" path="res://src/environment/floor_push_2.tscn" id="12_3jwcb"]
+[ext_resource type="PackedScene" uid="uid://y2k6i8ogenm4" path="res://src/environment/floor_teleport_target.tscn" id="12_tl5vx"]
+[ext_resource type="PackedScene" uid="uid://xefiqbh0ctad" path="res://src/environment/floor_teleport.tscn" id="12_w00ok"]
 [ext_resource type="PackedScene" uid="uid://7yrqg4suu65c" path="res://src/environment/death_wall.tscn" id="14_6u17k"]
-[ext_resource type="PackedScene" uid="uid://e6a2c38dj25a" path="res://src/environment/floor_obstacle_fox.tscn" id="15_q4khi"]
+[ext_resource type="PackedScene" uid="uid://48jm2seu840k" path="res://src/environment/floor_obstacle_fox.tscn" id="15_q4khi"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5skj"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_s3n7w"]
+material = SubResource("StandardMaterial3D_j5skj")
+size = Vector2(10000, 10000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k0x70"]
 size = Vector3(22.9654, 1, 22.647)
@@ -23,6 +31,7 @@ size = Vector3(22.9654, 1, 22.647)
 [node name="TestMap" type="Node3D"]
 script = ExtResource("1_8i1b0")
 initial_scroll_count = 10
+target_key_count = 10
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.997389, -0.0625369, 0.0361057, 0.0546818, -0.327517, 0.943262, -0.0471634, 0.942773, 0.330082, 0, 8.56998, 0)
@@ -40,7 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206609, 0.46886, 7.00403)
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.42, 0)
 
 [node name="CameraController" type="Node3D" parent="." node_paths=PackedStringArray("target")]
-transform = Transform3D(0.707107, -0.640856, 0.298836, 0, 0.422618, 0.906307, -0.707107, -0.640856, 0.298836, 0, 0, 0)
+transform = Transform3D(0.707107, -0.640856, 0.298836, 0, 0.422618, 0.906307, -0.707107, -0.640856, 0.298836, 1, 0, -4)
 script = ExtResource("3_l6avm")
 target = NodePath("../Player")
 
@@ -49,6 +58,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 15
 current = true
 fov = 45.0
 size = 10.0
+
+[node name="Background" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -64, 0)
+mesh = SubResource("QuadMesh_s3n7w")
 
 [node name="Floors" type="Node3D" parent="."]
 
@@ -81,6 +94,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -7)
 
 [node name="FloorObstacleStag" parent="Floors" instance=ExtResource("11_1a12s")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6, 0, 3)
+
+[node name="FloorTeleportTarget" parent="Floors" instance=ExtResource("12_tl5vx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
+
+[node name="FloorTeleport" parent="Floors" node_paths=PackedStringArray("teleport_target") instance=ExtResource("12_w00ok")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11)
+teleport_target = NodePath("../FloorTeleportTarget")
 
 [node name="Column" parent="." instance=ExtResource("3_3hstp")]
 collision_layer = 4

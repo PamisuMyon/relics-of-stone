@@ -1,0 +1,40 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://buri8tnwii8lo"
+path="res://.godot/imported/Teleporter2.glb-2298daf2c6b6593252d8b0b560f7a298.scn"
+
+[deps]
+
+source_file="res://assets/ruins/Teleporter2.glb"
+dest_files=["res://.godot/imported/Teleporter2.glb-2298daf2c6b6593252d8b0b560f7a298.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="Scene Root"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+import_script/path=""
+_subresources={
+"materials": {
+"Dark": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/ruins/mat_floor.tres"
+},
+"Light": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/ruins/mat_floor.tres"
+}
+}
+}

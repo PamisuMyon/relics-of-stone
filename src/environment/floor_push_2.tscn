@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://78um3kdvgc2m"]
 
 [ext_resource type="PackedScene" uid="uid://cqqakjex5toh0" path="res://src/environment/floor.tscn" id="1_lv4lu"]
 [ext_resource type="Texture2D" uid="uid://bxpx078q51yet" path="res://assets/textures/arrow2.png" id="2_rq76n"]
@@ -33,4 +33,4 @@ shape = SubResource("BoxShape3D_0bd8g")
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.00424683, 0)
 mesh = SubResource("QuadMesh_8f1b2")
 
-[connection signal="body_entered" from="PushArea" to="." method="_on_push_area_body_entered"]
+[connection signal="body_entered" from="PushArea" to="." method="_on_effect_area_body_entered"]

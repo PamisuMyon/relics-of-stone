@@ -1,11 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvh64sb21gfwg"]
+[gd_scene load_steps=7 format=3]
 
 [ext_resource type="Environment" uid="uid://7llcpbx14r1" path="res://src/environment/environment.tres" id="1_7r1an"]
-[ext_resource type="Script" path="res://src/framework/camera_rotator.gd" id="3_hdmeo"]
+[ext_resource type="Script" path="res://src/framework/node_rotator_3d.gd" id="3_hdmeo"]
 [ext_resource type="Script" path="res://src/ui/end_ui.gd" id="5_y1p3y"]
 [ext_resource type="FontFile" uid="uid://b00ow0mbvbjld" path="res://assets/fonts/mandrill.ttf" id="6_grv8a"]
 [ext_resource type="PackedScene" uid="uid://mfwk4y6ysj76" path="res://src/environment/column.tscn" id="7_ehvhh"]
-[ext_resource type="PackedScene" path="res://src/props/summoning_circle.tscn" id="10_t26fn"]
+[ext_resource type="PackedScene" uid="uid://bplqsfx6i07v4" path="res://src/props/summoning_circle.tscn" id="10_t26fn"]
 
 [node name="LevelEnd" type="Node3D"]
 

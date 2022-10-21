@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://src/environment/floor.gd" id="1_dvxn4"]
 [ext_resource type="PackedScene" uid="uid://c5v33e3mtucva" path="res://assets/ruins/Floor_SquareLarge.glb" id="2_47u47"]
 [ext_resource type="Script" path="res://src/framework/sound_player.gd" id="3_antmg"]
-[ext_resource type="AudioStream" uid="uid://dwq8xg2qgassj" path="res://assets/audio/stone_push.ogg" id="4_37kjt"]
-[ext_resource type="AudioStream" uid="uid://cscfrrl3s8lfc" path="res://assets/audio/space shield.ogg" id="5_nyi5f"]
+[ext_resource type="AudioStream" uid="uid://byib3w1wqnxea" path="res://assets/audio/stone_push.ogg" id="4_37kjt"]
+[ext_resource type="AudioStream" uid="uid://dtctssvcr1xtn" path="res://assets/audio/space shield.ogg" id="5_nyi5f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rf36l"]
 size = Vector3(1.982, 0.15, 1.982)
