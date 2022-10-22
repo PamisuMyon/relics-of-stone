@@ -10,11 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://7yrqg4suu65c" path="res://src/environment/death_wall.tscn" id="9_gmpft"]
 [ext_resource type="PackedScene" uid="uid://bplqsfx6i07v4" path="res://src/props/summoning_circle.tscn" id="10_t26fn"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5skj"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m77j3"]
 disable_receive_shadows = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_26qqr"]
-material = SubResource("StandardMaterial3D_j5skj")
+material = SubResource("StandardMaterial3D_m77j3")
 size = Vector2(10000, 10000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_eaa4v"]

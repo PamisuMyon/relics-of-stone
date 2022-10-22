@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://db15r6rhehv7o"]
+[gd_scene load_steps=12 format=3 uid="uid://db15r6rhehv7o"]
 
 [ext_resource type="Environment" uid="uid://7llcpbx14r1" path="res://src/environment/environment.tres" id="1_7r1an"]
 [ext_resource type="Script" path="res://src/framework/node_rotator_3d.gd" id="3_hdmeo"]
@@ -9,6 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://mfwk4y6ysj76" path="res://src/environment/column.tscn" id="7_ehvhh"]
 [ext_resource type="PackedScene" uid="uid://f3eau6vl4qsi" path="res://src/ui/menu_panel.tscn" id="9_onrh2"]
 [ext_resource type="PackedScene" uid="uid://bplqsfx6i07v4" path="res://src/props/summoning_circle.tscn" id="10_t26fn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5skj"]
+disable_receive_shadows = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_h4fwi"]
+material = SubResource("StandardMaterial3D_j5skj")
+size = Vector2(10000, 10000)
 
 [node name="LevelTitle" type="Node3D"]
 
@@ -103,6 +110,10 @@ expand_icon = true
 
 [node name="MenuPanel" parent="TitleUI" instance=ExtResource("9_onrh2")]
 visible = false
+
+[node name="Background" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -64, 0)
+mesh = SubResource("QuadMesh_h4fwi")
 
 [connection signal="pressed" from="TitleUI/VBoxContainer/StartButton" to="TitleUI" method="_on_start_button_pressed"]
 [connection signal="pressed" from="TitleUI/ButtonMenu" to="TitleUI" method="_on_button_menu_pressed"]

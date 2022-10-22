@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=9 format=3 uid="uid://c234jcnnv8dlr"]
 
 [ext_resource type="Environment" uid="uid://7llcpbx14r1" path="res://src/environment/environment.tres" id="1_7r1an"]
 [ext_resource type="Script" path="res://src/framework/node_rotator_3d.gd" id="3_hdmeo"]
@@ -6,6 +6,13 @@
 [ext_resource type="FontFile" uid="uid://b00ow0mbvbjld" path="res://assets/fonts/mandrill.ttf" id="6_grv8a"]
 [ext_resource type="PackedScene" uid="uid://mfwk4y6ysj76" path="res://src/environment/column.tscn" id="7_ehvhh"]
 [ext_resource type="PackedScene" uid="uid://bplqsfx6i07v4" path="res://src/props/summoning_circle.tscn" id="10_t26fn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2as28"]
+disable_receive_shadows = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_d87oa"]
+material = SubResource("StandardMaterial3D_2as28")
+size = Vector2(10000, 10000)
 
 [node name="LevelEnd" type="Node3D"]
 
@@ -45,6 +52,7 @@ grow_vertical = 2
 script = ExtResource("5_y1p3y")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="EndUI"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -59,6 +67,7 @@ grow_vertical = 2
 theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="EndUI/VBoxContainer2"]
+layout_mode = 2
 offset_right = 324.0
 offset_bottom = 76.0
 grow_horizontal = 2
@@ -70,6 +79,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="EndUI/VBoxContainer2"]
+layout_mode = 2
 offset_top = 84.0
 offset_right = 324.0
 offset_bottom = 119.0
@@ -82,6 +92,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="EndUI"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -96,6 +107,7 @@ grow_vertical = 2
 theme_override_constants/separation = 20
 
 [node name="BackButton" type="Button" parent="EndUI/VBoxContainer"]
+layout_mode = 2
 offset_right = 158.0
 offset_bottom = 37.0
 grow_horizontal = 2
@@ -103,5 +115,9 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("6_grv8a")
 theme_override_font_sizes/font_size = 28
 text = "Back to Title"
+
+[node name="Background" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -64, 0)
+mesh = SubResource("QuadMesh_d87oa")
 
 [connection signal="pressed" from="EndUI/VBoxContainer/BackButton" to="EndUI" method="_on_back_button_pressed"]

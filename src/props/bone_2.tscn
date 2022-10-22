@@ -2,11 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bq14180xnxp8r" path="res://src/props/item.tscn" id="1_0xi7x"]
 [ext_resource type="AudioStream" uid="uid://cbhalwbkmmvlj" path="res://assets/audio/Rise02.ogg" id="2_bhr6e"]
-[ext_resource type="PackedScene" uid="uid://dw8o4uxgm8h2d" path="res://assets/props/Skull.glb" id="2_d7vw4"]
+[ext_resource type="PackedScene" uid="uid://dehto6y1kf5wy" path="res://assets/props/Skull.glb" id="2_d7vw4"]
 
 [node name="Bone2" instance=ExtResource("1_0xi7x")]
 
 [node name="PickUp" parent="." index="1"]
+volume_db = -10.0
 streams = [ExtResource("2_bhr6e")]
 
 [node name="Skull" parent="." index="2" instance=ExtResource("2_d7vw4")]
