@@ -22,6 +22,9 @@ target_key_count = 2
 [node name="Player" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0.469, 7)
 
+[node name="CameraController" parent="." index="4"]
+transform = Transform3D(0.707107, -0.672498, 0.218508, 0, 0.309017, 0.951056, -0.707107, -0.672498, 0.218508, 0, 0, 0)
+
 [node name="Decoration" type="Node3D" parent="." index="10"]
 
 [node name="Candles_1" parent="Decoration" index="0" instance=ExtResource("2_unr6x")]
@@ -44,6 +47,73 @@ transform = Transform3D(-0.374913, -0.398005, -0.837277, 0.259835, 0.82184, -0.5
 
 [node name="Wall_Double_Broken" parent="Decoration" index="6" instance=ExtResource("8_tg0oi")]
 transform = Transform3D(-0.978914, -0.0318463, -0.201775, -0.0944532, 0.946403, 0.308867, 0.181125, 0.321413, -0.929455, -5.239, -18, 7.121)
+
+[node name="Scroll" parent="." index="12" instance=ExtResource("4_0y6b5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -3)
+
+[node name="Scroll3" parent="." index="13" instance=ExtResource("4_0y6b5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -7)
+
+[node name="Scroll2" parent="." index="14" instance=ExtResource("4_0y6b5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 2, -5)
+
+[node name="Scroll4" parent="." index="15" instance=ExtResource("4_0y6b5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2, -7)
+
+[node name="Scroll5" parent="." index="16" instance=ExtResource("4_0y6b5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, -7)
+
+[node name="Hint" type="Control" parent="." index="17"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Controls" type="NinePatchRect" parent="Hint" index="0"]
+self_modulate = Color(0, 0, 0, 0.164706)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -160.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("6_2d72e")
+patch_margin_left = 152
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hint/Controls" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Hint/Controls/VBoxContainer" index="0"]
+custom_minimum_size = Vector2i(0, 28)
+offset_top = 6.0
+offset_right = 110.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("7_q2svx")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "Zoom [color=#86fff1]Z X[/color]"
+scroll_active = false
+
+[node name="Bone5" parent="." index="18" instance=ExtResource("13_hokhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -5)
+
+[node name="Bone3" parent="." index="19" instance=ExtResource("14_k3dam")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 3)
 
 [node name="Floor" parent="Floors" index="0" instance=ExtResource("2_pa0do")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 5)
@@ -89,73 +159,3 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 
 
 [node name="FloorPush5" parent="Floors" index="14" instance=ExtResource("3_fusr7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -5)
-
-[node name="Scroll" parent="." index="12" instance=ExtResource("4_0y6b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, -3)
-
-[node name="Scroll3" parent="." index="13" instance=ExtResource("4_0y6b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, -7)
-
-[node name="Scroll2" parent="." index="14" instance=ExtResource("4_0y6b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 2, -5)
-
-[node name="Scroll4" parent="." index="15" instance=ExtResource("4_0y6b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 2, -7)
-
-[node name="Scroll5" parent="." index="16" instance=ExtResource("4_0y6b5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, -7)
-
-[node name="Hint" type="Control" parent="." index="17"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Controls" type="NinePatchRect" parent="Hint" index="0"]
-self_modulate = Color(0, 0, 0, 0.164706)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -160.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("6_2d72e")
-patch_margin_left = 152
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Hint/Controls" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Hint/Controls/VBoxContainer" index="0"]
-custom_minimum_size = Vector2i(0, 28)
-layout_mode = 2
-offset_top = 6.0
-offset_right = 110.0
-offset_bottom = 34.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 4
-theme_override_fonts/normal_font = ExtResource("7_q2svx")
-theme_override_font_sizes/normal_font_size = 28
-bbcode_enabled = true
-text = "Zoom [color=#86fff1]Z X[/color]"
-scroll_active = false
-
-[node name="Bone5" parent="." index="18" instance=ExtResource("13_hokhr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -5)
-
-[node name="Bone3" parent="." index="19" instance=ExtResource("14_k3dam")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 3)

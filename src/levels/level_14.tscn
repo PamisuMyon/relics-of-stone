@@ -25,9 +25,6 @@ target_key_count = 5
 [node name="Player" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52223, 0.46886, -0.10192)
 
-[node name="CameraController" parent="." index="4"]
-transform = Transform3D(0.707107, -0.664463, 0.241845, 0, 0.34202, 0.939692, -0.707107, -0.664463, 0.241845, 0, 0, 0)
-
 [node name="Camera3D" parent="CameraController" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 22)
 
@@ -71,6 +68,39 @@ transform = Transform3D(0.0473675, 0.612373, -0.789149, -0.75, -0.5, -0.433012, 
 
 [node name="Wall_Double_Broken" parent="Decoration" index="12" instance=ExtResource("8_y2fqn")]
 transform = Transform3D(0.224144, -0.965926, 0.12941, -0.836516, -0.258819, -0.482963, 0.5, 7.5349e-08, -0.866025, 14, -20, -9)
+
+[node name="Scroll3" parent="." index="12" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 5)
+
+[node name="Scroll5" parent="." index="13" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 11)
+
+[node name="Scroll6" parent="." index="14" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 11)
+
+[node name="Scroll7" parent="." index="15" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 5)
+
+[node name="Scroll4" parent="." index="16" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -11)
+
+[node name="Scroll2" parent="." index="17" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -16)
+
+[node name="Bone7" parent="." index="18" instance=ExtResource("15_0y5ct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 0)
+
+[node name="Bone8" parent="." index="19" instance=ExtResource("15_0y5ct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -13)
+
+[node name="Bone9" parent="." index="20" instance=ExtResource("15_0y5ct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 11)
+
+[node name="Bone10" parent="." index="21" instance=ExtResource("15_0y5ct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 11)
+
+[node name="Bone11" parent="." index="22" instance=ExtResource("15_0y5ct")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 0)
 
 [node name="Floor6" parent="Floors" index="0" instance=ExtResource("2_xgvx8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 0)
@@ -168,36 +198,3 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 0,
 
 [node name="FloorPush10" parent="Floors" index="31" instance=ExtResource("16_2gpg0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -10)
-
-[node name="Scroll3" parent="." index="12" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 5)
-
-[node name="Scroll5" parent="." index="13" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 11)
-
-[node name="Scroll6" parent="." index="14" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 11)
-
-[node name="Scroll7" parent="." index="15" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 5)
-
-[node name="Scroll4" parent="." index="16" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -11)
-
-[node name="Scroll2" parent="." index="17" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -16)
-
-[node name="Bone7" parent="." index="18" instance=ExtResource("15_0y5ct")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 0)
-
-[node name="Bone8" parent="." index="19" instance=ExtResource("15_0y5ct")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -13)
-
-[node name="Bone9" parent="." index="20" instance=ExtResource("15_0y5ct")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 11)
-
-[node name="Bone10" parent="." index="21" instance=ExtResource("15_0y5ct")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1, 11)
-
-[node name="Bone11" parent="." index="22" instance=ExtResource("15_0y5ct")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 0)

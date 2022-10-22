@@ -36,7 +36,7 @@ environment = ExtResource("1_7r1an")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.206609, 0.46886, -1.42174)
 
 [node name="CameraController" type="Node3D" parent="." node_paths=PackedStringArray("target")]
-transform = Transform3D(0.707107, -0.640856, 0.298836, 0, 0.422618, 0.906307, -0.707107, -0.640856, 0.298836, 0, 0, 0)
+transform = Transform3D(0.707107, -0.664463, 0.241845, 0, 0.34202, 0.939692, -0.707107, -0.664463, 0.241845, 0, 0, 0)
 script = ExtResource("5_adqgu")
 target = NodePath("../Player")
 

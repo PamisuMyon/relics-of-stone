@@ -21,9 +21,6 @@ target_key_count = 2
 [node name="Player" parent="." index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95346, 0.46886, 5.96024)
 
-[node name="CameraController" parent="." index="4"]
-transform = Transform3D(0.707107, -0.664463, 0.241845, 0, 0.34202, 0.939692, -0.707107, -0.664463, 0.241845, 0, 0, 0)
-
 [node name="Camera3D" parent="CameraController" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 20)
 
@@ -49,6 +46,94 @@ transform = Transform3D(0.117363, 0.157825, 0.980468, -0.720916, 0.692565, -0.02
 
 [node name="Wall_Broken2" parent="Decoration" index="6" instance=ExtResource("4_lq61o")]
 transform = Transform3D(-0.525188, -0.670797, 0.52365, -0.847831, 0.359501, -0.389798, 0.0732232, -0.648684, -0.757527, 12, -30, 0)
+
+[node name="Bone5" parent="." index="12" instance=ExtResource("10_e52an")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 0)
+
+[node name="Bone6" parent="." index="13" instance=ExtResource("10_e52an")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, 5)
+
+[node name="Scroll" parent="." index="14" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 7)
+
+[node name="Scroll10" parent="." index="15" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 6)
+
+[node name="Scroll11" parent="." index="16" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, 6)
+
+[node name="Scroll3" parent="." index="17" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, -8)
+
+[node name="Scroll5" parent="." index="18" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -10)
+
+[node name="Scroll6" parent="." index="19" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -10)
+
+[node name="Scroll7" parent="." index="20" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -8)
+
+[node name="Scroll8" parent="." index="21" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -6)
+
+[node name="Scroll4" parent="." index="22" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, -6)
+
+[node name="Scroll2" parent="." index="23" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 7)
+
+[node name="Scroll9" parent="." index="24" instance=ExtResource("4_4tftf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1, 7)
+
+[node name="Hint" type="Control" parent="." index="25"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Controls" type="NinePatchRect" parent="Hint" index="0"]
+self_modulate = Color(0, 0, 0, 0.164706)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -339.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("8_w2pdr")
+patch_margin_left = 152
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hint/Controls" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Hint/Controls/VBoxContainer" index="0"]
+custom_minimum_size = Vector2i(0, 28)
+layout_mode = 2
+offset_top = 6.0
+offset_right = 289.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_fonts/normal_font = ExtResource("9_tberf")
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "Zoom [color=#86fff1]Z X[/color]   Change View [color=#86fff1]F[/color]"
+scroll_active = false
 
 [node name="FloorObstacleFox" parent="Floors" index="0" instance=ExtResource("2_jnwl8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 13, 0, 5)
@@ -172,91 +257,3 @@ transform = Transform3D(-1, 0, -8.74226e-08, 0, 1, 0, 8.74226e-08, 0, -1, 11, 0,
 
 [node name="FloorPush4" parent="Floors" index="40" instance=ExtResource("3_hrd4q")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 1, 0, -9)
-
-[node name="Bone5" parent="." index="12" instance=ExtResource("10_e52an")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1, 0)
-
-[node name="Bone6" parent="." index="13" instance=ExtResource("10_e52an")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 1, 5)
-
-[node name="Scroll" parent="." index="14" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1, 7)
-
-[node name="Scroll10" parent="." index="15" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, 6)
-
-[node name="Scroll11" parent="." index="16" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, 6)
-
-[node name="Scroll3" parent="." index="17" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, -8)
-
-[node name="Scroll5" parent="." index="18" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -10)
-
-[node name="Scroll6" parent="." index="19" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -10)
-
-[node name="Scroll7" parent="." index="20" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -8)
-
-[node name="Scroll8" parent="." index="21" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 1, -6)
-
-[node name="Scroll4" parent="." index="22" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 1, -6)
-
-[node name="Scroll2" parent="." index="23" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 7)
-
-[node name="Scroll9" parent="." index="24" instance=ExtResource("4_4tftf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1, 7)
-
-[node name="Hint" type="Control" parent="." index="25"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="Controls" type="NinePatchRect" parent="Hint" index="0"]
-self_modulate = Color(0, 0, 0, 0.164706)
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -339.0
-offset_top = -40.0
-grow_horizontal = 0
-grow_vertical = 0
-texture = ExtResource("8_w2pdr")
-patch_margin_left = 152
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Hint/Controls" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 50.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Hint/Controls/VBoxContainer" index="0"]
-custom_minimum_size = Vector2i(0, 28)
-layout_mode = 2
-offset_top = 6.0
-offset_right = 289.0
-offset_bottom = 34.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 4
-theme_override_fonts/normal_font = ExtResource("9_tberf")
-theme_override_font_sizes/normal_font_size = 28
-bbcode_enabled = true
-text = "Zoom [color=#86fff1]Z X[/color]   Change View [color=#86fff1]F[/color]"
-scroll_active = false

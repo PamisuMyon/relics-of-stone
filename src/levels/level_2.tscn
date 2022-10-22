@@ -73,7 +73,6 @@ mouse_filter = 2
 
 [node name="Controls" type="NinePatchRect" parent="Hint" index="0"]
 self_modulate = Color(0, 0, 0, 0.164706)
-layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -85,7 +84,6 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Hint/Controls" index="0"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -96,7 +94,6 @@ alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Hint/Controls/VBoxContainer" index="0"]
 custom_minimum_size = Vector2i(0, 28)
-layout_mode = 2
 offset_top = 6.0
 offset_right = 188.0
 offset_bottom = 34.0
