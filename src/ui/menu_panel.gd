@@ -17,6 +17,7 @@ func _ready():
 
 
 func _on_level_button_pressed(index: int):
+	visible = false
 	Global.select_level(index)
 
 

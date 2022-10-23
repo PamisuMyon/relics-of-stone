@@ -30,23 +30,40 @@ func _physics_process(delta):
 
 
 func restart():
-	get_tree().reload_current_scene()
+	if current >= 0 and current < levels.size():
+		_change_scene(levels[current])
+	else:
+		get_tree().reload_current_scene()
 
 
 func next_level():
 	current += 1
 	if current >= levels.size():
 		current = -1
-		get_tree().change_scene_to_file(level_end)
+#		get_tree().change_scene_to_file(level_end)
+		_change_scene(level_end)
 	else:
-		get_tree().change_scene_to_file(levels[current])
+#		get_tree().change_scene_to_file(levels[current])
+		_change_scene(levels[current])
 
 
 func select_level(index: int):
 	current = clamp(index, 0, levels.size() - 1)
-	get_tree().change_scene_to_file(levels[current])
+#	get_tree().change_scene_to_file(levels[current])
+	_change_scene(levels[current])
 
 
 func back_to_title():
 	current = -1
-	get_tree().change_scene_to_file(level_title)
+#	get_tree().change_scene_to_file(level_title)
+	_change_scene(level_title)
+
+
+func _change_scene(path: String):
+	var thread := Thread.new()	# TODO pooling?
+	thread.start(_do_change_scene.bind(path))
+
+
+func _do_change_scene(path: String):
+	var scene := load(path)
+	get_tree().call_deferred("change_scene_to_packed", scene)

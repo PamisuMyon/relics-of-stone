@@ -135,7 +135,6 @@ grow_vertical = 2
 script = ExtResource("1_yfqtj")
 
 [node name="BoxKey" type="HBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -148,7 +147,6 @@ alignment = 1
 
 [node name="Icon" type="TextureRect" parent="BoxKey"]
 custom_minimum_size = Vector2i(30, 32)
-layout_mode = 2
 offset_left = 6.0
 offset_right = 36.0
 offset_bottom = 32.0
@@ -157,7 +155,6 @@ texture = ExtResource("2_8u3xc")
 ignore_texture_size = true
 
 [node name="LabelKey" type="Label" parent="BoxKey"]
-layout_mode = 2
 offset_left = 40.0
 offset_right = 95.0
 offset_bottom = 32.0
@@ -166,7 +163,6 @@ text = "- / -"
 label_settings = SubResource("LabelSettings_hlclp")
 
 [node name="BoxScroll" type="HBoxContainer" parent="."]
-layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -179,7 +175,6 @@ alignment = 1
 
 [node name="Icon" type="TextureRect" parent="BoxScroll"]
 custom_minimum_size = Vector2i(30, 32)
-layout_mode = 2
 offset_right = 30.0
 offset_bottom = 32.0
 size_flags_vertical = 4
@@ -187,7 +182,6 @@ texture = ExtResource("3_ygq8p")
 ignore_texture_size = true
 
 [node name="LabelScroll" type="Label" parent="BoxScroll"]
-layout_mode = 2
 offset_left = 34.0
 offset_right = 45.0
 offset_bottom = 32.0
@@ -196,7 +190,6 @@ text = "-"
 label_settings = SubResource("LabelSettings_0neic")
 
 [node name="ButtonMenu" type="Button" parent="."]
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -210,7 +203,6 @@ icon = ExtResource("5_11bm6")
 expand_icon = true
 
 [node name="ButtonRestart" type="Button" parent="."]
-layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -229,7 +221,6 @@ libraries = {
 }
 
 [node name="MenuPanel" parent="." instance=ExtResource("7_rghrj")]
-layout_mode = 1
 
 [node name="ErrorSound" type="AudioStreamPlayer" parent="."]
 bus = &"Sound"

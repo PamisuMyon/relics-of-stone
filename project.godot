@@ -57,12 +57,12 @@ _global_script_class_icons={
 [application]
 
 config/name="Relics of Stone"
-run/main_scene="res://src/levels/level_title.tscn"
+run/main_scene="res://src/levels/level_splash.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 boot_splash/image="res://assets/textures/gwj.png"
-boot_splash/bg_color=Color(0.0784314, 0.133333, 0.25098, 1)
+boot_splash/bg_color=Color(0.494118, 0.568627, 0.521569, 1)
 config/icon="res://icon.svg"
-boot_splash/minimum_display_time=1200
+boot_splash/minimum_display_time=1000
 
 [autoload]
 

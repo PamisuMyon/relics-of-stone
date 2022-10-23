@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cj1fhxx4ro8yv"]
+[gd_scene load_steps=15 format=3 uid="uid://cj1fhxx4ro8yv"]
 
 [ext_resource type="PackedScene" uid="uid://bodrg5tuuwmcx" path="res://src/levels/level_template.tscn" id="1_yigpx"]
 [ext_resource type="PackedScene" uid="uid://cqqakjex5toh0" path="res://src/environment/floor.tscn" id="2_xgvx8"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bxte6552y2wt4" path="res://assets/ruins/Column.glb" id="7_ovde7"]
 [ext_resource type="PackedScene" uid="uid://bnfyt82ynflxd" path="res://src/props/bone_2.tscn" id="11_wtptu"]
 [ext_resource type="PackedScene" uid="uid://dxscvyjt5jpdb" path="res://src/props/bone_3.tscn" id="12_155wj"]
+[ext_resource type="Texture2D" uid="uid://bmhdjgq8dy5ea" path="res://assets/textures/bg_horizontal.png" id="12_cbt5y"]
 
 [node name="Level2" instance=ExtResource("1_yigpx")]
 initial_scroll_count = 2
@@ -73,6 +74,7 @@ mouse_filter = 2
 
 [node name="Controls" type="NinePatchRect" parent="Hint" index="0"]
 self_modulate = Color(0, 0, 0, 0.164706)
+layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -82,8 +84,10 @@ offset_left = -258.0
 offset_top = -40.0
 grow_horizontal = 0
 grow_vertical = 0
+texture = ExtResource("12_cbt5y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Hint/Controls" index="0"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -94,6 +98,7 @@ alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Hint/Controls/VBoxContainer" index="0"]
 custom_minimum_size = Vector2i(0, 28)
+layout_mode = 2
 offset_top = 6.0
 offset_right = 188.0
 offset_bottom = 34.0
