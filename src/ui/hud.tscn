@@ -135,7 +135,7 @@ grow_vertical = 2
 script = ExtResource("1_yfqtj")
 
 [node name="BoxKey" type="HBoxContainer" parent="."]
-anchors_preset = 5
+layout_mode = 0
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -51.0
@@ -146,24 +146,19 @@ grow_horizontal = 2
 alignment = 1
 
 [node name="Icon" type="TextureRect" parent="BoxKey"]
-custom_minimum_size = Vector2i(30, 32)
-offset_left = 6.0
-offset_right = 36.0
-offset_bottom = 32.0
+custom_minimum_size = Vector2(30, 32)
+layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("2_8u3xc")
-ignore_texture_size = true
+expand_mode = 1
 
 [node name="LabelKey" type="Label" parent="BoxKey"]
-offset_left = 40.0
-offset_right = 95.0
-offset_bottom = 32.0
-grow_horizontal = 2
+layout_mode = 2
 text = "- / -"
 label_settings = SubResource("LabelSettings_hlclp")
 
 [node name="BoxScroll" type="HBoxContainer" parent="."]
-anchors_preset = 2
+layout_mode = 0
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 8.0
@@ -174,23 +169,19 @@ grow_vertical = 0
 alignment = 1
 
 [node name="Icon" type="TextureRect" parent="BoxScroll"]
-custom_minimum_size = Vector2i(30, 32)
-offset_right = 30.0
-offset_bottom = 32.0
+custom_minimum_size = Vector2(30, 32)
+layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("3_ygq8p")
-ignore_texture_size = true
+expand_mode = 1
 
 [node name="LabelScroll" type="Label" parent="BoxScroll"]
-offset_left = 34.0
-offset_right = 45.0
-offset_bottom = 32.0
-grow_horizontal = 2
+layout_mode = 2
 text = "-"
 label_settings = SubResource("LabelSettings_0neic")
 
 [node name="ButtonMenu" type="Button" parent="."]
-anchors_preset = 1
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -29.0
@@ -203,7 +194,7 @@ icon = ExtResource("5_11bm6")
 expand_icon = true
 
 [node name="ButtonRestart" type="Button" parent="."]
-anchors_preset = 1
+layout_mode = 0
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -29.0
@@ -221,11 +212,12 @@ libraries = {
 }
 
 [node name="MenuPanel" parent="." instance=ExtResource("7_rghrj")]
+layout_mode = 1
 
 [node name="ErrorSound" type="AudioStreamPlayer" parent="."]
 bus = &"Sound"
 script = ExtResource("8_2lp5f")
-streams = [ExtResource("9_rcu6r")]
+streams = Array[AudioStream]([ExtResource("9_rcu6r")])
 
 [connection signal="pressed" from="ButtonMenu" to="." method="_on_button_menu_pressed"]
 [connection signal="pressed" from="ButtonRestart" to="." method="_on_button_restart_pressed"]

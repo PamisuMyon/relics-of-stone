@@ -5,6 +5,8 @@ extends Node3D
 
 func _process(delta):
 	if character.velocity.length_squared() < 0.1:
-		anim_tree["parameters/state/current"] = 0
+		# idle
+		anim_tree.set("parameters/state/transition_request", "idle")
 	else:
-		anim_tree["parameters/state/current"] = 1
+		# run
+		anim_tree.set("parameters/state/transition_request", "run")
