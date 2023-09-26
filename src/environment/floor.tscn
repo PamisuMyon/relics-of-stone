@@ -58,9 +58,9 @@ collide_with_areas = true
 [node name="MoveSound" type="AudioStreamPlayer" parent="."]
 bus = &"Sound"
 script = ExtResource("3_antmg")
-streams = [ExtResource("4_37kjt")]
+streams = Array[AudioStream]([ExtResource("4_37kjt")])
 
 [node name="PushSound" type="AudioStreamPlayer" parent="."]
 bus = &"Sound"
 script = ExtResource("3_antmg")
-streams = [ExtResource("5_nyi5f")]
+streams = Array[AudioStream]([ExtResource("5_nyi5f")])

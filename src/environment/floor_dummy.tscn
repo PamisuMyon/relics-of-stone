@@ -21,8 +21,6 @@ blend_shape_mode = 0
 [node name="FloorDummy" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 3)
 script = ExtResource("1_vta28")
-color_available = null
-color_unavailable = null
 
 [node name="RootNode" type="Node3D" parent="."]
 

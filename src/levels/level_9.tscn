@@ -115,13 +115,8 @@ grow_vertical = 2
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Hint/Controls/VBoxContainer" index="0"]
-custom_minimum_size = Vector2i(0, 28)
+custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
-offset_top = 6.0
-offset_right = 289.0
-offset_bottom = 34.0
-grow_horizontal = 2
-grow_vertical = 2
 size_flags_vertical = 4
 theme_override_fonts/normal_font = ExtResource("16_r0tdc")
 theme_override_font_sizes/normal_font_size = 28

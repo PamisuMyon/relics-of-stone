@@ -55,6 +55,12 @@ transform = Transform3D(0.224144, -0.965926, -0.12941, 0.836516, 0.258819, -0.48
 [node name="Column" parent="Decoration" index="8" instance=ExtResource("8_4ax1y")]
 transform = Transform3D(0.965926, -0.224144, -0.12941, 0.25, 0.678603, 0.69065, -0.0669873, -0.699469, 0.711516, -7, -29, 8)
 
+[node name="Crystal" parent="." index="13" instance=ExtResource("4_446ls")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -4)
+
+[node name="Bone2" parent="." index="14" instance=ExtResource("5_uv4ux")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 4)
+
 [node name="Floor" parent="Floors" index="0" instance=ExtResource("2_0je15")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
 
@@ -72,9 +78,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 0)
 
 [node name="Floor4" parent="Floors" index="5" instance=ExtResource("2_0je15")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
-
-[node name="Crystal" parent="." index="13" instance=ExtResource("4_446ls")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -4)
-
-[node name="Bone2" parent="." index="14" instance=ExtResource("5_uv4ux")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 4)

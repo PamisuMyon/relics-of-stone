@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/rounded_512_20.png-ed93c3406847f33ad19703272c
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
